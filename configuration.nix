@@ -89,6 +89,16 @@
     open-sans
   ];
 
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      serif = [ "Open Sans" ];
+      sansSerif = [ "Open Sans" ];
+      monospace = [ "JetBrainsMono Nerd Font" ];
+      emoji = [ "Noto Color Emoji" ];
+    };
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
