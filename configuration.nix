@@ -70,10 +70,7 @@
   services.kanata = {
     enable = true;
     keyboards.default = {
-      config = builtins.readFile /home/dhanush/.dotfiles/kanata/.config/kanata/config.kbd;
-      extraDefCfg = ''
-        process-unmapped-keys yes
-      '';
+      configFile = ./config.kbd;
     };
   };
 
@@ -126,6 +123,7 @@
     fzf
     tmux
     lazygit
+    delta
     eza
     zoxide
     mpv
