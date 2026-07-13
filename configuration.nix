@@ -13,6 +13,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
   ];
 
   # Bootloader.
@@ -160,6 +161,11 @@
   ];
   programs.fuse.enable = true;
 
+  home-manager = {
+    users = {
+      "dhanush" = import ./home.nix;
+    };
+  };
   # ---------------------------------------------------
 
   # Some programs need SUID wrappers, can be configured further or are
