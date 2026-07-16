@@ -87,18 +87,8 @@
   fonts.packages = with pkgs; [
     jetbrains-mono
     nerd-fonts.jetbrains-mono
-    open-sans
+    inter
   ];
-
-  fonts.fontconfig = {
-    enable = true;
-    defaultFonts = {
-      serif = [ "Open Sans" ];
-      sansSerif = [ "Open Sans" ];
-      monospace = [ "JetBrainsMono Nerd Font" ];
-      emoji = [ "Noto Color Emoji" ];
-    };
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -154,6 +144,9 @@
     bluez
     bluez-tools
     bluetui
+    
+    uv
+    ffmpeg
 
     inputs.zen-browser.packages.${pkgs.system}.default
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -164,6 +157,42 @@
   home-manager = {
     users = {
       "dhanush" = import ./home.nix;
+    };
+  };
+
+  stylix = {
+    enable = true;
+
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+
+    polarity = "dark";
+
+    fonts = {
+      sansSerif = {
+        package = pkgs.inter;
+        name = "Inter";
+      };
+
+      serif = {
+        package = pkgs.inter;
+        name = "Inter";
+      };
+
+      monospace = {
+        package = pkgs.jetbrains-mono;
+        name = "JetBrains Mono";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
+      };
+    };
+
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
     };
   };
   # ---------------------------------------------------

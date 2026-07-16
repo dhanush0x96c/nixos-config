@@ -7,6 +7,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix.url = "github:danth/stylix";
+
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +28,10 @@
           inherit inputs;
         };
 
-        modules = [ ./configuration.nix ];
+        modules = [
+          ./configuration.nix
+          inputs.stylix.nixosModules.stylix
+        ];
       };
     };
 }
