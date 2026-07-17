@@ -117,7 +117,6 @@
     wofi
     wl-clipboard
     brightnessctl
-    yazi
     firefox
     hyprpaper
     hyprlock
