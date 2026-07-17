@@ -112,7 +112,6 @@
     git
     neovim
     tree-sitter
-    kitty
     waybar
     mako
     wofi
