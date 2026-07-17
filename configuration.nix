@@ -144,7 +144,7 @@
     bluez
     bluez-tools
     bluetui
-    
+
     uv
     ffmpeg
 
