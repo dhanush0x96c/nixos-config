@@ -113,7 +113,6 @@
     tree-sitter
     waybar
     mako
-    wofi
     wl-clipboard
     brightnessctl
     firefox

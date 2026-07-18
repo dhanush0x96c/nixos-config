@@ -1,0 +1,111 @@
+/* ---------- Window ---------- */
+
+window {
+    margin: 0;
+    padding: 16px;
+
+    border: 2px solid;
+    border-radius: 12px;
+}
+
+/* ---------- Layout ---------- */
+
+#outer-box {
+    margin: 4px;
+    padding: 10px;
+}
+
+#inner-box {
+    margin: 4px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#scroll {
+    margin: 0;
+    padding: 8px;
+}
+
+/* ---------- Search ---------- */
+
+#input {
+    margin: 0 16px 14px;
+    padding: 12px 14px;
+
+    border: 2px solid;
+    border-radius: 8px;
+
+    font-weight: 600;
+}
+
+#input image {
+    margin-right: 8px;
+}
+
+/* ---------- Entries ---------- */
+
+#entry {
+    margin: 2px 0;
+    padding: 8px 10px;
+
+    border: 2px solid transparent;
+    border-radius: 8px;
+}
+
+#entry:hover {
+    border: 2px solid;
+}
+
+#entry:selected {
+    border: 2px solid;
+}
+
+#entry arrow {
+    margin: 0 6px;
+}
+
+/* ---------- Text ---------- */
+
+#text {
+    margin-left: 8px;
+}
+
+#entry:selected #text {
+    font-weight: bold;
+}
+
+/* ---------- Mode ---------- */
+
+#mode-indicator {
+    margin: 4px;
+    padding: 6px 10px;
+
+    border: 2px solid;
+    border-radius: 6px;
+
+    font-weight: bold;
+}
+
+/* ---------- Message ---------- */
+
+#message {
+    margin: 6px 0;
+    padding: 10px;
+
+    border: 2px solid;
+    border-radius: 8px;
+}
+
+/* ---------- Misc ---------- */
+
+separator {
+    margin: 6px 0;
+}
+
+image {
+    margin-right: 8px;
+}
+
+label {
+    font-weight: 500;
+}
