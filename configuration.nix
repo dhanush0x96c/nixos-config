@@ -109,7 +109,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git
     neovim
     tree-sitter
     waybar
@@ -123,11 +122,8 @@
     hypridle
     hyprpicker
     hyprshot
-    bat
     fzf
     tmux
-    lazygit
-    delta
     eza
     zoxide
     mpv

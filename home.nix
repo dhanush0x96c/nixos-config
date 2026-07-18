@@ -4,6 +4,8 @@
   imports = [
     ./programs/kitty.nix
     ./programs/yazi.nix
+    ./programs/git.nix
+    ./programs/bat.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
