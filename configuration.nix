@@ -85,9 +85,10 @@
   hardware.bluetooth.powerOnBoot = true;
 
   fonts.packages = with pkgs; [
-    jetbrains-mono
-    nerd-fonts.jetbrains-mono
-    inter
+    noto-fonts
+    # jetbrains-mono
+    # nerd-fonts.jetbrains-mono
+    # inter
   ];
 
   # Allow unfree packages

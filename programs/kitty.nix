@@ -1,15 +1,21 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  stylix.targets.kitty.opacity.enable = false;
+  stylix.targets.kitty = {
+    opacity.enable = false;
+    fonts.enable = false;
+  };
 
   programs.kitty = {
     enable = true;
 
-    settings = {
-      font_family = "JetBrainsMono Nerd Font Mono";
-      font_size = 16;
+    font = {
+      package = pkgs.nerd-fonts.jetbrains-mono;
+      name = "JetBrainsMono Nerd Font Mono";
+      size = 16;
+    };
 
+    settings = {
       background_opacity = "0.8";
     };
 
