@@ -123,7 +123,6 @@
     hyprpicker
     hyprshot
     fzf
-    tmux
     eza
     zoxide
     mpv
