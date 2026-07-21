@@ -1,0 +1,217 @@
+@import "mocha.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 14px;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+window#waybar {
+  background: @base;
+  color: @text;
+  border-bottom: 2px solid @crust;
+}
+
+#hyprland-submap {
+  color: @red;
+  background: @surface0;
+  margin: 4px;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+#custom-hyprlock {
+  color: @mauve;
+  font-size: 16px;
+}
+
+/* Hyprland workspaces */
+#workspaces {
+  background: @mantle;
+  margin: 4px 4px;
+  padding: 0 6px;
+  border-radius: 8px;
+}
+
+#workspaces button {
+  color: @overlay0;
+  padding: 0 6px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+  background: @surface0;
+  color: @text;
+}
+
+#workspaces button.active {
+  color: @base;
+  background: @mauve;
+}
+
+#workspaces button.urgent {
+  color: @base;
+  background: @red;
+}
+
+#mode {
+  background: @red;
+  color: @base;
+  margin: 4px;
+  padding: 0 10px;
+  border-radius: 8px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#wireplumber,
+#custom-media,
+#tray,
+#idle_inhibitor,
+#custom-power,
+#custom-hyprlock {
+  background: @mantle;
+  padding: 0 10px;
+  margin: 4px 2px;
+  border-radius: 8px;
+}
+
+/* Module-specific styling */
+#clock {
+  color: @yellow;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @green;
+  background-color: #26a65b;
+}
+
+#battery.critical:not(.charging) {
+  background-color: @red;
+  color: @base;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: @text;
+    color: @red;
+  }
+}
+
+#cpu {
+  color: @blue;
+}
+
+#memory {
+  color: @mauve;
+}
+
+#disk {
+  color: @pink;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#network {
+  color: @teal;
+}
+
+#network.disconnected {
+  color: @red;
+}
+
+#wireplumber {
+  color: @sky;
+}
+
+#wireplumber.muted {
+  color: @overlay1;
+}
+
+#temperature {
+  color: @peach;
+}
+
+#temperature.critical {
+  color: @red;
+}
+
+#tray {
+  color: @lavender;
+}
+
+#idle_inhibitor {
+  color: @flamingo;
+}
+
+#idle_inhibitor.activated {
+  color: @rosewater;
+  background-color: @surface0;
+}
+
+#custom-power {
+  color: @red;
+  margin-right: 6px;
+}
+
+/* Animation for certain elements */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#custom-hyprlock:hover,
+#custom-power:hover {
+  background: @surface0;
+  animation: pulse 2s infinite;
+}
+
+/* Smooth transitions */
+#workspaces button,
+#idle_inhibitor,
+#custom-hyprlock,
+#custom-power {
+  transition: all 0.3s ease;
+}
+
+tooltip {
+  background: @base;
+  border: 2px solid @crust;
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: @text;
+}

@@ -112,7 +112,6 @@
   environment.systemPackages = with pkgs; [
     neovim
     tree-sitter
-    waybar
     mako
     wl-clipboard
     brightnessctl
@@ -137,6 +136,7 @@
     bluez
     bluez-tools
     bluetui
+    networkmanagerapplet
 
     uv
     ffmpeg

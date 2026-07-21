@@ -8,6 +8,7 @@
     ./programs/bat.nix
     ./programs/wofi.nix
     ./programs/tmux.nix
+    ./programs/waybar.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

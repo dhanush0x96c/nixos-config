@@ -1,0 +1,149 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 4,
+  "margin-top": 6,
+  "margin-left": 8,
+  "margin-right": 8,
+  "modules-left": ["hyprland/workspaces", "hyprland/submap", "custom/media"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "idle_inhibitor",
+    "wireplumber",
+    "network",
+    "cpu",
+    "memory",
+    "temperature",
+    "backlight",
+    "battery",
+    "tray",
+    "custom/hyprlock",
+    "custom/power"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "󰲠 ",
+      "2": "󰲢 ",
+      "3": "󰲤 ",
+      "4": "󰲦 ",
+      "5": "󰲨 ",
+      "6": "󰲪 ",
+      "7": "󰲬 ",
+      "8": "󰲮 ",
+      "9": "󰲰 ",
+      "10": "󰿬 ",
+      "urgent": "󰀨 ",
+      "default": "󰋙 "
+    },
+    "sort-by-number": true,
+    "reverse-scrolling": true,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "hyprland/submap": {
+    "format": "󰘳 {}",
+    "tooltip": false
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰒳 ",
+      "deactivated": "󰒲 "
+    },
+    "tooltip-format-activated": "Idle inhibitor active",
+    "tooltip-format-deactivated": "Idle inhibitor inactive"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "󰅐 {:%H:%M}",
+    "format-alt": "󰃭 {:%Y-%m-%d %H:%M:%S}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "interval": 1
+  },
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "tooltip": true,
+    "interval": 2
+  },
+  "memory": {
+    "format": "󰍛 {percentage}%",
+    "tooltip-format": "{used:0.1f}GB / {total:0.1f}GB used",
+    "interval": 2
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["󱃃", "󰔏", "󱃂"]
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "reverse-scrolling": true,
+    "on-scroll-up": "brightnessctl set +1%",
+    "on-scroll-down": "brightnessctl set 1%-"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "Battery at {capacity}%\n{timeTo}"
+  },
+  "network": {
+    "interface-ethernet": "enp*",
+    "interface-wifi": "wlan*",
+    "format-wifi": "󰖩 {essid} ({signalStrength}%)",
+    "format-ethernet": "󰈀 Connected",
+    "tooltip-format": "󰩟 {gwaddr}",
+    "format-disconnected": "󰖪 Disconnected",
+    "format-alt": " {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "interval": 5
+  },
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "󰂯 {volume}%",
+    "format-bluetooth-muted": "󰂲 muted",
+    "format-muted": "󰝟 muted",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
+      "phone": "󰏲",
+      "portable": "󰏲",
+      "car": "󰄋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "reverse-scrolling": true,
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+  "custom/media": {
+    "format": "󰎈 {}",
+    "max-length": 40,
+    "interval": 5,
+    "exec": "playerctl metadata --format '{{ artist }} - {{ title }}'",
+    "exec-if": "playerctl status > /dev/null 2>&1",
+    "on-click": "playerctl play-pause"
+  },
+  "custom/hyprlock": {
+    "format": "󰌾",
+    "on-click": "hyprlock",
+    "tooltip": false
+  },
+  "custom/power": {
+    "format": "󰐥",
+    "on-click": "hyprctl dispatch exit",
+    "tooltip": false
+  }
+}
