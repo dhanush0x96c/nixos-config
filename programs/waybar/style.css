@@ -77,6 +77,7 @@ window#waybar {
 #temperature,
 #backlight,
 #network,
+#bluetooth,
 #wireplumber,
 #custom-media,
 #tray,
@@ -143,6 +144,19 @@ window#waybar {
 
 #network.disconnected {
   color: @red;
+}
+
+#bluetooth {
+  color: @blue;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+  color: @overlay1;
+}
+
+#bluetooth.connected {
+  color: @sapphire;
 }
 
 #wireplumber {
