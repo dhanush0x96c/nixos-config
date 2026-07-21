@@ -85,7 +85,7 @@
   hardware.bluetooth.powerOnBoot = true;
 
   fonts.packages = with pkgs; [
-    noto-fonts
+    # noto-fonts
     # jetbrains-mono
     # nerd-fonts.jetbrains-mono
     # inter
