@@ -127,6 +127,18 @@
     mpv
     nixfmt
     sshfs
+    dust
+    duf
+    btop
+    tldr
+    moor
+    ripgrep
+    fd
+    unzip
+    cargo
+    statix
+    zed-editor
+    vscode
 
     stow
     python3
