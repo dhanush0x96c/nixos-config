@@ -25,6 +25,9 @@
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
 
+  # TODO: This was a temporary fix to remove the warning
+  home.pointerCursor.enable = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
