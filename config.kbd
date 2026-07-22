@@ -22,10 +22,12 @@
   l (tap-hold $tap-time $hold-time l ralt)
   ; (tap-hold $tap-time $hold-time ; rmet)
   spc-nav (tap-hold $tap-time $hold-time spc (layer-while-held nav))
+  lsft-td (tap-dance $tap-time (lsft caps))
+  rsft-td (tap-dance $tap-time (rsft caps))
 )
 
 (deflayer base
-  @escctrl @a @s @d @f h @j @k @l @; @spc-nav XX XX XX XX XX XX XX XX XX XX XX
+  @escctrl @a @s @d @f h @j @k @l @; @spc-nav XX XX @lsft-td XX @rsft-td XX XX XX XX XX XX
 )
 
 (deflayer nav
