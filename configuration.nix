@@ -139,6 +139,10 @@
     statix
     zed-editor
     vscode
+    antigravity-cli
+    codex
+    github-copilot-cli
+    opencode
 
     stow
     python3
