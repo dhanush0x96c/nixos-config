@@ -6,22 +6,28 @@
   "margin-top": 6,
   "margin-left": 8,
   "margin-right": 8,
-  "modules-left": ["hyprland/workspaces", "hyprland/submap", "custom/media"],
-  "modules-center": ["clock"],
-  "modules-right": [
-    "idle_inhibitor",
-    "wireplumber",
-    "network",
-    "cpu",
-    "memory",
-    "temperature",
-    "backlight",
-    "battery",
-    "tray",
-    "bluetooth",
-    "custom/hyprlock",
-    "custom/power"
-  ],
+"modules-left": [
+  "hyprland/workspaces",
+  "hyprland/submap",
+  "custom/media",
+  "cpu",
+  "memory",
+  "temperature",
+],
+"modules-center": [
+  "clock"
+],
+"modules-right": [
+  "backlight",
+  "wireplumber",
+  "network",
+  "bluetooth",
+  "battery",
+  "idle_inhibitor",
+  "tray",
+  "custom/hyprlock",
+  "custom/power"
+],
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",

@@ -125,6 +125,7 @@
     eza
     zoxide
     mpv
+    playerctl
     nixfmt
     sshfs
     dust
