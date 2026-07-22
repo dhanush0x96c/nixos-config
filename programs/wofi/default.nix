@@ -18,6 +18,6 @@
       no_actions = true;
     };
 
-    style = builtins.readFile ../style.css;
+    style = builtins.readFile ./style.css;
   };
 }

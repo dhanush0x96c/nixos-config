@@ -14,6 +14,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    ./programs/kanata
   ];
 
   # Bootloader.
@@ -71,13 +72,6 @@
     ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;
-  };
-
-  services.kanata = {
-    enable = true;
-    keyboards.default = {
-      configFile = ./config.kbd;
-    };
   };
 
   hardware.bluetooth.enable = true;

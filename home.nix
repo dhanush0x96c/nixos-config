@@ -2,13 +2,13 @@
 
 {
   imports = [
-    ./programs/kitty.nix
-    ./programs/yazi.nix
-    ./programs/git.nix
-    ./programs/bat.nix
-    ./programs/wofi.nix
-    ./programs/tmux.nix
-    ./programs/waybar.nix
+    ./programs/kitty
+    ./programs/yazi
+    ./programs/git
+    ./programs/bat
+    ./programs/wofi
+    ./programs/tmux
+    ./programs/waybar
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
