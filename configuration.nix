@@ -104,64 +104,19 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    neovim
-    tree-sitter
-    mako
-    wl-clipboard
-    brightnessctl
-    firefox
-    hyprpaper
-    hyprlock
-    hypridle
-    hyprpicker
-    hyprshot
-    fzf
-    eza
-    zoxide
-    mpv
-    playerctl
-    nixfmt
-    sshfs
-    dust
-    duf
-    btop
-    tldr
-    moor
-    ripgrep
-    fd
-    unzip
-    cargo
-    statix
-    zed-editor
-    vscode
-    antigravity-cli
-    codex
-    github-copilot-cli
-    opencode
 
-    stow
-    python3
-    clang
-    google-chrome
-
-    bluez
-    bluez-tools
-    bluetui
-    networkmanagerapplet
-
-    uv
-    ffmpeg
-
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-  ];
   programs.fuse.enable = true;
 
   home-manager = {
     users = {
       "dhanush" = import ./home.nix;
+    };
+
+    useGlobalPkgs = true;
+    useUserPackages = true;
+
+    extraSpecialArgs = {
+      inherit inputs;
     };
   };
 
