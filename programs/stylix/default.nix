@@ -35,5 +35,11 @@
       name = "Bibata-Modern-Ice";
       size = 24;
     };
+
+    icons = {
+      enable = true;
+      package = pkgs.papirus-icon-theme;
+      dark = "Papirus-Dark";
+    };
   };
 }
