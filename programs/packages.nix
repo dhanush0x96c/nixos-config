@@ -1,7 +1,6 @@
 { pkgs, inputs, ... }:
 {
   home.packages = with pkgs; [
-
     neovim
     tree-sitter
     mako
@@ -13,9 +12,6 @@
     hypridle
     hyprpicker
     hyprshot
-    fzf
-    eza
-    zoxide
     mpv
     playerctl
     nixfmt

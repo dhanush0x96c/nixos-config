@@ -9,6 +9,7 @@
   programs.kitty = {
     enable = true;
 
+    shellIntegration.mode = "no-cursor";
     font = {
       package = pkgs.nerd-fonts.jetbrains-mono;
       name = "JetBrainsMono Nerd Font Mono";

@@ -9,6 +9,10 @@
     ./programs/wofi
     ./programs/tmux
     ./programs/waybar
+    ./programs/eza
+    ./programs/fzf
+    ./programs/zoxide
+    ./programs/zsh
     ./programs/stylix/kde.nix
     ./programs/packages.nix
   ];
