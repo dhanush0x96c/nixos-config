@@ -63,6 +63,8 @@
     "flakes"
   ];
 
+  nix.settings.warn-dirty = false;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."dhanush" = {
     isNormalUser = true;
@@ -120,6 +122,17 @@
     };
   };
 
+  security.sudo.extraRules = [
+    {
+      users = [ "dhanush" ];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/nixos-rebuild";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
   # ---------------------------------------------------
 
   # Some programs need SUID wrappers, can be configured further or are
