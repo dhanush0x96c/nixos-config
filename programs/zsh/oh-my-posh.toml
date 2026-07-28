@@ -4,13 +4,13 @@ final_space = true
 
 [transient_prompt]
 foreground_templates = [
-  "{{ if eq .Code 0 }}green{{ end }}",
-  "{{ if ne .Code 0 }}red{{ end }}",
+  "{{ if eq .Code 0 }}#@COLOR_GREEN@{{ end }}",
+  "{{ if ne .Code 0 }}#@COLOR_RED@{{ end }}",
 ]
 template = "❯ "
 
 [secondary_prompt]
-foreground = "green"
+foreground = "#@COLOR_GREEN@"
 template = "❯❯"
 
 [[blocks]]
@@ -20,12 +20,13 @@ alignment = 'left'
 [[blocks.segments]]
 type = "os"
 style = "plain"
+foreground = "#@COLOR_FG@"
 template = "{{ .Icon }} "
 
 [[blocks.segments]]
 type = "path"
 style = "plain"
-foreground = "blue"
+foreground = "#@COLOR_BLUE@"
 template = """
 {{ if not .Writable }} {{ end }}\
 {{ if .Segments.Git }}{{ .Folder }}\
@@ -42,12 +43,12 @@ display_root = true
 [[blocks.segments]]
 type = "git"
 style = "plain"
-foreground = "green"
+foreground = "#@COLOR_GREEN@"
 template = """ {{ .UpstreamIcon }} \
 {{ .HEAD }}\
 {{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}\
 {{ if gt .StashCount 0 }} *{{ .StashCount }}{{ end }}\
-<yellow>{{ if .Staging.Changed }} [{{ .Staging.String }}]{{ end }}\
+<#@COLOR_YELLOW@>{{ if .Staging.Changed }} [{{ .Staging.String }}]{{ end }}\
 {{ if .Working.Changed }} {{ .Working.String }}{{ end }}</>\
 """
 
@@ -59,13 +60,6 @@ git_icon = "\ue702"
 branch_identical_icon = ""
 branch_gone_icon = ""
 
-# [blocks.segments.options.status_formats]
-# Added = "󰐕%d "
-# Modified = "󰏫%d"
-# Deleted = "\uea81%d"
-# Untracked = "󰞋%d"
-# Unmerged = "󰘬%d"
-
 
 [[blocks]]
 type = 'prompt'
@@ -75,13 +69,15 @@ overflow = "hidden"
 [[blocks.segments]]
 type = "executiontime"
 style = "plain"
-foreground = "yellow"
+foreground = "#@COLOR_YELLOW@"
 template = "\uf017 {{ .FormattedMs }} "
 
 [[blocks.segments]]
 type = "status"
-foreground = "red"
+style = "plain"
+foreground = "#@COLOR_RED@"
 template = "\u2718 {{ .Code }}"
+
 
 [[blocks]]
 type = 'prompt'
@@ -92,7 +88,7 @@ newline = true
 type = "text"
 style = "plain"
 foreground_templates = [
-  "{{ if eq .Code 0 }}green{{ end }}",
-  "{{ if ne .Code 0 }}red{{ end }}",
+  "{{ if eq .Code 0 }}#@COLOR_GREEN@{{ end }}",
+  "{{ if ne .Code 0 }}#@COLOR_RED@{{ end }}",
 ]
 template = "❯"
