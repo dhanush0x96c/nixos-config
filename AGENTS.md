@@ -49,7 +49,7 @@ This repository manages the system and user configurations for the host **`tesse
 ## 🛠️ Essential Commands & Workflows
 
 ### 1. Staging New Files (CRITICAL)
-Nix Flakes only recognize files tracked by `git`. Whenever you create a new `.nix` file or directory:
+Nix Flakes only recognize files tracked by `git`. *(Note: AI agents must never run `git` commands unless explicitly requested by the user, with the exception of running `git add` to stage newly created files when required by Nix).*
 ```bash
 git add <path-to-new-file>
 ```
@@ -102,11 +102,14 @@ git add <path-to-new-file>
    - Keep existing `stateVersion` settings (`26.05`) intact.
    - Maintain security sudo rules in `configuration.nix`.
 
+5. **Git Operations**:
+   - **Never touch git** (do not execute `git` commands like `git commit`, `git status`, `git push`, etc.) unless explicitly requested by the user. The only exception is running `git add` to stage newly created files when required by Nix Flakes.
+
 ---
 
 ## 🧪 Verification Protocol
 
 Before declaring any change complete:
-1. Ensure all new files are tracked in git (`git add`).
+1. Ensure all new files are tracked in git (`git add` when required by Nix Flakes).
 2. Format modified files using `nixfmt`.
 3. Verify build output using `nixos-rebuild build --flake .#tesseract`.
