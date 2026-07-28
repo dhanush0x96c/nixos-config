@@ -112,4 +112,4 @@ git add <path-to-new-file>
 Before declaring any change complete:
 1. Ensure all new files are tracked in git (`git add` when required by Nix Flakes).
 2. Format modified files using `nixfmt`.
-3. Verify build output using `nixos-rebuild build --flake .#tesseract`.
+3. Rebuild and switch to the new configuration using `sudo nixos-rebuild switch --flake .#tesseract` (password not required).
