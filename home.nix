@@ -13,6 +13,7 @@
     ./programs/fzf
     ./programs/zoxide
     ./programs/zsh
+    ./programs/neovim
     ./programs/stylix/kde.nix
     ./programs/packages.nix
   ];
