@@ -1,0 +1,50 @@
+# Colors (Catppuccin Mocha Theme)
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+progress-color=#313244
+
+# Basic Configuration
+font=monospace 10
+width=300
+height=100
+margin=10
+padding=15
+border-size=2
+border-radius=5
+default-timeout=5000
+ignore-timeout=0
+max-visible=5
+sort=-time
+
+# Alignment
+layer=overlay
+anchor=top-right
+
+# Format
+format=<b>%s</b>\n%b
+text-alignment=left
+icon-path=/usr/share/icons/Papirus
+max-icon-size=64
+markup=1
+actions=1
+
+# Mouse Controls
+on-button-left=dismiss
+on-button-middle=dismiss-all
+on-button-right=dismiss
+on-touch=dismiss
+
+# Urgency Levels
+[urgency=low]
+border-color=#94e2d5
+default-timeout=3000
+
+[urgency=normal]
+border-color=#89b4fa
+default-timeout=5000
+
+[urgency=high]
+border-color=#fab387
+background-color=#302828
+default-timeout=0
