@@ -1,10 +1,10 @@
 { pkgs, inputs, ... }:
 {
   home.packages = with pkgs; [
+    # Essentials
     mako
     wl-clipboard
     brightnessctl
-    firefox
     hyprpaper
     hyprlock
     hypridle
@@ -12,38 +12,42 @@
     hyprshot
     mpv
     playerctl
-    nixfmt
-    sshfs
-    dust
-    duf
-    btop
-    tldr
-    moor
-    ripgrep
-    fd
-    unzip
-    cargo
-    statix
-    zed-editor
-    vscode
-    antigravity-cli
-    codex
-    github-copilot-cli
-    opencode
-
-    stow
-    python3
-    clang
-    google-chrome
-
     bluez
     bluez-tools
     bluetui
     networkmanagerapplet
 
-    uv
-    ffmpeg
-
+    # Browsers
+    firefox
+    google-chrome
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+
+    # CLI Tools
+    btop
+    duf
+    dust
+    fd
+    fx
+    jq
+    moor
+    nixfmt
+    ripgrep
+    sshfs
+    tldr
+    unzip
+
+    # Editors/Agents
+    antigravity-cli
+    codex
+    github-copilot-cli
+    opencode
+    vscode
+    zed-editor
+
+    # DevTools
+    ffmpeg
+    go
+    python3
+    uv
   ];
 }
