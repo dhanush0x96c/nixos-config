@@ -2,7 +2,8 @@
 
 * {
   font-family: "JetBrainsMono Nerd Font", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
   min-height: 0;
   border: none;
   border-radius: 0;
@@ -13,7 +14,7 @@
 window#waybar {
   background: @base;
   color: @text;
-  border-bottom: 2px solid @crust;
+  border-bottom: 1px solid @surface0;
 }
 
 #hyprland-submap {
@@ -21,29 +22,28 @@ window#waybar {
   background: @surface0;
   margin: 4px;
   padding: 0 10px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: bold;
 }
 
 #custom-hyprlock {
-  color: @mauve;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* Hyprland workspaces */
 #workspaces {
   background: @mantle;
   margin: 4px 4px;
-  padding: 0 6px;
-  border-radius: 8px;
+  padding: 0 4px;
+  border-radius: 6px;
 }
 
 #workspaces button {
-  color: @overlay0;
-  padding: 0 6px;
-  margin: 4px 2px;
+  color: @subtext0;
+  padding: 0 8px;
+  margin: 3px 2px;
   border-radius: 4px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #workspaces button:hover {
@@ -54,6 +54,7 @@ window#waybar {
 #workspaces button.active {
   color: @base;
   background: @blue;
+  font-weight: bold;
 }
 
 #workspaces button.urgent {
@@ -66,7 +67,7 @@ window#waybar {
   color: @base;
   margin: 4px;
   padding: 0 10px;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 #clock,
@@ -85,31 +86,45 @@ window#waybar {
 #custom-power,
 #custom-hyprlock {
   background: @mantle;
+  color: @text;
   padding: 0 10px;
   margin: 4px 2px;
-  border-radius: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Module-specific styling */
-#clock {
-  color: @yellow;
+/* Interactive module hovers */
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#bluetooth:hover,
+#wireplumber:hover,
+#custom-media:hover,
+#idle_inhibitor:hover,
+#custom-hyprlock:hover {
+  background: @surface0;
 }
 
-#battery {
-  color: @green;
+#custom-power:hover {
+  background: @red;
+  color: @base;
 }
 
+/* Functional states */
 #battery.charging,
 #battery.plugged {
   color: @green;
-  background-color: #26a65b;
 }
 
 #battery.critical:not(.charging) {
   background-color: @red;
   color: @base;
   animation-name: blink;
-  animation-duration: 0.5s;
+  animation-duration: 0.8s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -117,113 +132,38 @@ window#waybar {
 
 @keyframes blink {
   to {
-    background-color: @text;
+    background-color: @base;
     color: @red;
   }
 }
 
-#cpu {
-  color: @blue;
-}
-
-#memory {
-  color: @mauve;
-}
-
-#disk {
-  color: @pink;
-}
-
-#backlight {
-  color: @yellow;
-}
-
-#network {
-  color: @teal;
-}
-
 #network.disconnected {
-  color: @red;
-}
-
-#bluetooth {
-  color: @blue;
+  color: @subtext0;
 }
 
 #bluetooth.disabled,
 #bluetooth.off {
-  color: @overlay1;
-}
-
-#bluetooth.connected {
-  color: @sapphire;
-}
-
-#wireplumber {
-  color: @sky;
+  color: @subtext0;
 }
 
 #wireplumber.muted {
-  color: @overlay1;
-}
-
-#temperature {
-  color: @peach;
+  color: @subtext0;
 }
 
 #temperature.critical {
   color: @red;
-}
-
-#tray {
-  color: @lavender;
-}
-
-#idle_inhibitor {
-  color: @flamingo;
+  font-weight: bold;
 }
 
 #idle_inhibitor.activated {
-  color: @rosewater;
-  background-color: @surface0;
-}
-
-#custom-power {
-  color: @red;
-  margin-right: 6px;
-}
-
-/* Animation for certain elements */
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-#custom-hyprlock:hover,
-#custom-power:hover {
+  color: @blue;
   background: @surface0;
-  animation: pulse 2s infinite;
-}
-
-/* Smooth transitions */
-#workspaces button,
-#idle_inhibitor,
-#custom-hyprlock,
-#custom-power {
-  transition: all 0.3s ease;
 }
 
 tooltip {
   background: @base;
-  border: 2px solid @crust;
-  border-radius: 8px;
+  border: 1px solid @surface0;
+  border-radius: 6px;
 }
 
 tooltip label {
