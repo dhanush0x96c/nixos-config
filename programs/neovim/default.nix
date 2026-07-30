@@ -12,11 +12,12 @@
       fd
 
       # Language Servers (LSPs)
-      nixd
+      nil
       lua-language-server
 
       # Formatters & Linters
       nixfmt
+      statix
       stylua
     ];
   };
