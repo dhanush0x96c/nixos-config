@@ -14,10 +14,9 @@ hl.monitor({
 ---- MY PROGRAMS ----
 ---------------------
 
--- Set programs that you use
 local terminal = "kitty"
-local fileManager = "dolphin"
-local menu = "hyprlauncher"
+local fileManager = terminal .. " -e yazi"
+local menu = "wofi"
 
 -------------------
 ---- AUTOSTART ----
