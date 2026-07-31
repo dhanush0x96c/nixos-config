@@ -1,10 +1,13 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./hyprlock.nix
+  ];
+
   home.packages = with pkgs; [
     brightnessctl
     hypridle
-    hyprlock
     hyprpaper
     hyprpicker
     hyprshot
