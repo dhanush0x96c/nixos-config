@@ -4,6 +4,8 @@
   stylix = {
     enable = true;
 
+    image = ../../assets/wallpapers/gargantua.jpg;
+
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-moon.yaml";
 
     polarity = "dark";
