@@ -4,14 +4,7 @@
     # Essentials
     mako
     wl-clipboard
-    brightnessctl
-    hyprpaper
-    hyprlock
-    hypridle
-    hyprpicker
-    hyprshot
     mpv
-    playerctl
     bluez
     bluez-tools
     bluetui
