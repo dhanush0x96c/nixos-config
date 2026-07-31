@@ -59,45 +59,53 @@ hl.env("HYPRCURSOR_SIZE", "24")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 5,
-		gaps_out = 20,
+		gaps_in = 4,
+		gaps_out = 14,
 
 		border_size = 2,
 
+		-- Tokyo Night Moon–inspired gradient: deep violet → electric cyan → emerald
 		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-			inactive_border = "rgba(595959aa)",
+			active_border = {
+				colors = { "rgba(7aa2f7ff)", "rgba(bb9af7ff)", "rgba(73dacacc)" },
+				angle = 135,
+			},
+			inactive_border = "rgba(3b4261aa)",
 		},
 
-		-- Set to true to enable resizing windows by clicking and dragging on borders and gaps
-		resize_on_border = false,
-
-		-- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
+		resize_on_border = true,
 		allow_tearing = false,
 
 		layout = "dwindle",
 	},
 
 	decoration = {
-		rounding = 10,
-		rounding_power = 2,
+		rounding = 14,
+		rounding_power = 3,
 
-		-- Change transparency of focused and unfocused windows
+		-- Focused windows are fully opaque; unfocused windows are slightly transparent for depth
 		active_opacity = 1.0,
-		inactive_opacity = 1.0,
+		inactive_opacity = 0.92,
 
 		shadow = {
 			enabled = true,
-			range = 4,
-			render_power = 3,
-			color = 0xee1a1a1a,
+			range = 20,
+			render_power = 4,
+			-- Deep blue-black shadow, softer than pure black
+			color = "rgba(1a1b2ecc)",
+			color_inactive = "rgba(1a1b2e66)",
 		},
 
 		blur = {
 			enabled = true,
-			size = 3,
-			passes = 1,
-			vibrancy = 0.1696,
+			size = 8,
+			passes = 3,
+			noise = 0.02,
+			contrast = 1.05,
+			brightness = 0.95,
+			vibrancy = 0.25,
+			vibrancy_darkness = 0.3,
+			special = true,
 		},
 	},
 
@@ -106,33 +114,61 @@ hl.config({
 	},
 })
 
--- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
+-- ─── Bezier Curves ────────────────────────────────────────────────────────────
+-- Smooth overshoot for windows popping in
+hl.curve("overshoot", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.05 } } })
+-- Fast-out, slow-in — used for windows disappearing
+hl.curve("easeOutExpo", { type = "bezier", points = { { 0.16, 1 }, { 0.3, 1 } } })
+-- Snappy deceleration
 hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
+-- Symmetric ease
 hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
 hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
 hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
 hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
 
--- Default springs
-hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
+-- ─── Spring Curves ────────────────────────────────────────────────────────────
+-- Slightly springy window motion — feels physical without being wobbly
+hl.curve("spring", { type = "spring", mass = 0.9, stiffness = 180, dampening = 22 })
+-- Subtle spring for workspace transitions
+hl.curve("springWS", { type = "spring", mass = 1, stiffness = 120, dampening = 20 })
 
-hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
-hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows", enabled = true, speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, spring = "easy", style = "popin 87%" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "popin 87%" })
-hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
-hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
-hl.animation({ leaf = "layers", enabled = true, speed = 3.81, bezier = "easeOutQuint" })
-hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "fade" })
-hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
-hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
+-- ─── Animations ───────────────────────────────────────────────────────────────
+-- Global fallback
+hl.animation({ leaf = "global", enabled = true, speed = 8, bezier = "easeOutQuint" })
+
+-- Border color animation
+hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "easeOutExpo" })
+
+-- Window open / move / close
+hl.animation({ leaf = "windows", enabled = true, speed = 5, spring = "spring" })
+hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.5, spring = "spring", style = "popin 80%" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 2.5, bezier = "easeOutExpo", style = "popin 80%" })
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, spring = "spring" })
+
+-- Fade
+hl.animation({ leaf = "fadeIn", enabled = true, speed = 2.5, bezier = "easeOutExpo" })
+hl.animation({ leaf = "fadeOut", enabled = true, speed = 2, bezier = "easeOutExpo" })
+hl.animation({ leaf = "fade", enabled = true, speed = 3, bezier = "easeOutQuint" })
+hl.animation({ leaf = "fadeDim", enabled = true, speed = 3, bezier = "easeOutQuint" })
+
+-- Layer surfaces (Waybar, Wofi, Mako, etc.)
+hl.animation({ leaf = "layers", enabled = true, speed = 4, bezier = "overshoot" })
+hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "overshoot", style = "slide" })
+hl.animation({ leaf = "layersOut", enabled = true, speed = 2, bezier = "easeOutExpo", style = "slide" })
+hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 2.5, bezier = "easeOutExpo" })
+hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 2, bezier = "easeOutExpo" })
+
+-- Workspace transitions — smooth horizontal slide
+hl.animation({ leaf = "workspaces", enabled = true, speed = 5, spring = "springWS", style = "slide" })
+hl.animation({ leaf = "workspacesIn", enabled = true, speed = 4.5, spring = "springWS", style = "slide" })
+hl.animation({ leaf = "workspacesOut", enabled = true, speed = 4, spring = "springWS", style = "slide" })
+
+-- Special workspace (scratchpad) — slidedown
+hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 5, spring = "spring", style = "slidevert" })
+
+-- Zoom
+hl.animation({ leaf = "zoomFactor", enabled = true, speed = 6, bezier = "overshoot" })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
