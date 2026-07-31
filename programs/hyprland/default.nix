@@ -8,11 +8,14 @@
     hyprpaper
     hyprpicker
     hyprshot
+    kitty
     mako
     playerctl
     waybar
+    wireplumber
     wl-clipboard
     wofi
+    yazi
     hyprshutdown
   ];
 
