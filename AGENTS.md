@@ -48,34 +48,7 @@ This repository manages the system and user configurations for the host **`tesse
 
 ## 🛠️ Essential Commands & Workflows
 
-### 1. Staging New Files (CRITICAL)
-Nix Flakes only recognize files tracked by `git`. *(Note: AI agents must never run `git` commands unless explicitly requested by the user, with the exception of running `git add` to stage newly created files when required by Nix).*
-```bash
-git add <path-to-new-file>
-```
-
-### 2. Testing & Rebuilding Configuration
-- **Dry Build (Syntax & Evaluation Check)**:
-  ```bash
-  nixos-rebuild build --flake .#tesseract
-  ```
-- **Apply Changes Immediately**:
-  ```bash
-  nixos-rebuild switch --flake .#tesseract
-  ```
-  *(Note: Passwordless `sudo` for `nixos-rebuild` is configured in `configuration.nix` for user `dhanush`)*
-
-- **Check Flake Validity**:
-  ```bash
-  nix flake check
-  ```
-
-- **Update Flake Dependencies**:
-  ```bash
-  nix flake update
-  ```
-
-### 3. Formatting Code
+### 1. Formatting Code
 - Formatting tool: `nixfmt` (installed in profile via [packages.nix](file:///home/dhanush/nixos-config/programs/packages.nix)).
 - Format Nix code:
   ```bash
@@ -103,13 +76,14 @@ git add <path-to-new-file>
    - Maintain security sudo rules in `configuration.nix`.
 
 5. **Git Operations**:
-   - **Never touch git** (do not execute `git` commands like `git commit`, `git status`, `git push`, etc.) unless explicitly requested by the user. The only exception is running `git add` to stage newly created files when required by Nix Flakes.
+   - **Never use git**: Do not run any `git` command (including `git add`, `git commit`, `git status`, etc.) under any circumstances. Staging, committing, and managing repository state is the sole responsibility of the user.
+
+6. **Nixos Rebuild Operations**:
+   - **Never use `nixos-rebuild`**: Do not run the `nixos-rebuild` command (including `nixos-rebuild switch` or `nixos-rebuild build`) under any circumstances. Testing, building, and applying the system configuration is the user's responsibility.
 
 ---
 
 ## 🧪 Verification Protocol
 
 Before declaring any change complete:
-1. Ensure all new files are tracked in git (`git add` when required by Nix Flakes).
-2. Format modified files using `nixfmt`.
-3. Rebuild and switch to the new configuration using `sudo nixos-rebuild switch --flake .#tesseract` (password not required).
+1. Format modified files using `nixfmt`.
