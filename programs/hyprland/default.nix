@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -14,7 +14,7 @@
     kitty
     mako
     playerctl
-    waybar
+    inputs.waybar.packages.${pkgs.system}.default
     wireplumber
     wl-clipboard
     wofi

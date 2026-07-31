@@ -1,10 +1,16 @@
-{ config, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 let
   colors = config.lib.stylix.colors.withHashtag;
 in
 {
   stylix.targets.waybar.enable = false;
   programs.waybar = {
+    package = inputs.waybar.packages.${pkgs.system}.default;
     enable = true;
   };
   xdg = {

@@ -22,7 +22,7 @@ local menu = "wofi"
 -------------------
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("waybar & mako & hyprpaper & hypridle")
+	hl.exec_cmd("waybar")
 end)
 
 -------------------------------
