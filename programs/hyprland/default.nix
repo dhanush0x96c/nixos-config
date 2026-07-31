@@ -3,11 +3,11 @@
 {
   imports = [
     ./hyprlock.nix
+    ./hypridle.nix
   ];
 
   home.packages = with pkgs; [
     brightnessctl
-    hypridle
     hyprpaper
     hyprpicker
     hyprshot
