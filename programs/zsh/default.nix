@@ -130,6 +130,7 @@
       };
 
       shellGlobalAliases = {
+        G = "| ${pkgs.ripgrep}/bin/rg";
         Y = "| ${pkgs.wl-clipboard}/bin/wl-copy";
         P = "${pkgs.wl-clipboard}/bin/wl-paste >";
         N = "> /dev/null 2>&1";
