@@ -59,7 +59,7 @@ window#waybar {
 
 #workspaces button.urgent {
   color: @base;
-  background: @red;
+  background: @peach;
 }
 
 #mode {
