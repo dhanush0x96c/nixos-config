@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     # Essentials
-    mako
     wl-clipboard
     mpv
     bluez
