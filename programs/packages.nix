@@ -34,7 +34,6 @@
     github-copilot-cli
     opencode
     vscode
-    zed-editor
 
     # DevTools
     ffmpeg
