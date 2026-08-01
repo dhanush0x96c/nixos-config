@@ -244,6 +244,13 @@ hl.config({
 	},
 })
 
+hl.config({
+	cursor = {
+		hide_on_key_press = true,
+	},
+})
+
+
 hl.gesture({
 	fingers = 3,
 	direction = "horizontal",
