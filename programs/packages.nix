@@ -2,9 +2,6 @@
 {
   home.packages = with pkgs; [
     # Essentials
-    bluez
-    bluez-tools
-    bluetui
     networkmanagerapplet
     libnotify
 

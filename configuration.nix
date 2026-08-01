@@ -16,6 +16,7 @@
     inputs.home-manager.nixosModules.default
     ./programs/kanata
     ./programs/stylix
+    ./programs/bluetooth
   ];
 
   # Bootloader.
@@ -76,10 +77,6 @@
     packages = with pkgs; [ ];
     shell = pkgs.zsh;
   };
-
-  hardware.bluetooth.enable = true;
-
-  hardware.bluetooth.powerOnBoot = true;
 
   fonts.packages = with pkgs; [
     # noto-fonts

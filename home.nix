@@ -22,6 +22,7 @@
     ./programs/stylix/kde.nix
     ./programs/packages.nix
     ./programs/clipboard
+    ./programs/bluetooth/home.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
