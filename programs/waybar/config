@@ -23,6 +23,7 @@
   "network",
   "bluetooth",
   "battery",
+  "custom/nixos-rebuild",
   "idle_inhibitor",
   "tray",
   "custom/hyprlock",
@@ -165,5 +166,12 @@
     "format": "󰐥",
     "on-click": "hyprctl dispatch exit",
     "tooltip": false
+  },
+  "custom/nixos-rebuild": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 2,
+    "exec": "~/.config/waybar/rebuild-status.sh",
+    "on-click": "~/.config/waybar/rebuild.sh"
   }
 }

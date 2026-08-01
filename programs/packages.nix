@@ -7,6 +7,7 @@
     bluez-tools
     bluetui
     networkmanagerapplet
+    libnotify
 
     # Browsers
     firefox

@@ -83,6 +83,7 @@ window#waybar {
 #custom-media,
 #tray,
 #idle_inhibitor,
+#custom-nixos-rebuild,
 #custom-power,
 #custom-hyprlock {
   background: @mantle;
@@ -105,6 +106,7 @@ window#waybar {
 #wireplumber:hover,
 #custom-media:hover,
 #idle_inhibitor:hover,
+#custom-nixos-rebuild:hover,
 #custom-hyprlock:hover {
   background: @surface0;
 }
@@ -156,6 +158,11 @@ window#waybar {
 }
 
 #idle_inhibitor.activated {
+  color: @blue;
+  background: @surface0;
+}
+
+#custom-nixos-rebuild.running {
   color: @blue;
   background: @surface0;
 }
