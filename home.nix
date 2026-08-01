@@ -16,6 +16,7 @@
     ./programs/mako
     ./programs/neovim
     ./programs/zed
+    ./programs/vscode
     ./programs/hyprland
     ./programs/stylix/kde.nix
     ./programs/packages.nix

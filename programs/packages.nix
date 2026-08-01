@@ -33,7 +33,6 @@
     codex
     github-copilot-cli
     opencode
-    vscode
 
     # DevTools
     ffmpeg
