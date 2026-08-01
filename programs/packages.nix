@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     # Essentials
-    wl-clipboard
     bluez
     bluez-tools
     bluetui

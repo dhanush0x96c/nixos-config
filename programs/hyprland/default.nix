@@ -16,7 +16,6 @@
     playerctl
     inputs.waybar.packages.${pkgs.system}.default
     wireplumber
-    wl-clipboard
     wofi
     yazi
     hyprshutdown
