@@ -12,7 +12,6 @@
 
     # Browsers
     firefox
-    google-chrome
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # CLI Tools
