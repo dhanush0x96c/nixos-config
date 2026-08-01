@@ -22,14 +22,14 @@
 
       initContent =
         let
-          early = lib.mkOrder 0 ''
+          early = lib.mkBefore ''
             if [[ "$TERM" == "xterm-kitty" ]]; then
               ZSH_TMUX_AUTOSTART=true
               ZSH_TMUX_AUTOCONNECT=false
             fi
           '';
 
-          normal = lib.mkOrder 1000 ''
+          normal = ''
             zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
             zstyle ':completion:*:git-checkout:*' sort false
@@ -66,10 +66,15 @@
             bindkey -s '^Xgc' 'git commit -m ""\C-b'
             bindkey -s '^Xr' 'nix run "nixpkgs#"\C-b'
           '';
+
+          late = lib.mkAfter ''
+            FAST_HIGHLIGHT_STYLES[global-alias]='fg=blue,bold'
+          '';
         in
         lib.mkMerge [
           early
           normal
+          late
         ];
 
       history = {
