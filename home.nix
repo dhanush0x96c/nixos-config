@@ -23,6 +23,10 @@
     ./programs/packages.nix
     ./programs/clipboard
     ./programs/bluetooth/home.nix
+    ./programs/btop
+    ./programs/fd
+    ./programs/jq
+    ./programs/ripgrep
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

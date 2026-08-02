@@ -10,15 +10,11 @@
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # CLI Tools
-    btop
     duf
     dust
-    fd
     fx
-    jq
     moor
     nixfmt
-    ripgrep
     sshfs
     tldr
     unzip
