@@ -14,7 +14,7 @@
     kitty
     mako
     playerctl
-    inputs.waybar.packages.${pkgs.system}.default
+    inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default
     wireplumber
     wofi
     yazi

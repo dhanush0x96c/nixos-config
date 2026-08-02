@@ -10,7 +10,7 @@ in
 {
   stylix.targets.waybar.enable = false;
   programs.waybar = {
-    package = inputs.waybar.packages.${pkgs.system}.default;
+    package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
     enable = true;
   };
   xdg = {
