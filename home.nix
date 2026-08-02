@@ -21,6 +21,8 @@
     ./programs/hyprland
     ./programs/stylix/kde.nix
     ./programs/packages.nix
+    ./programs/firefox
+    ./programs/zen-browser
     ./programs/clipboard
     ./programs/bluetooth/home.nix
     ./programs/btop

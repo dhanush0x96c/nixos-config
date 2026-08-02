@@ -14,7 +14,7 @@ hl.monitor({
 ---------------------
 
 local terminal = "kitty"
-local browser = "zen"
+local browser = "zen-beta"
 local fileManager = terminal .. " -e yazi"
 local menu = "wofi"
 

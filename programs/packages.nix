@@ -5,10 +5,6 @@
     networkmanagerapplet
     libnotify
 
-    # Browsers
-    firefox
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-
     # CLI Tools
     duf
     dust
