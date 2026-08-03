@@ -40,7 +40,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.dhanush = import ./home.nix;
+              users.dhanush = import ./home/dhanush;
               extraSpecialArgs = {
                 inherit inputs;
               };
