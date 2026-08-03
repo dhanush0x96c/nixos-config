@@ -26,6 +26,7 @@
     ./programs/zen-browser
     ./programs/clipboard
     ./programs/bluetooth/home.nix
+    ./programs/podman/home.nix
     ./programs/btop
     ./programs/fd
     ./programs/jq

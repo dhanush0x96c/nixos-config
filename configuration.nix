@@ -17,6 +17,7 @@
     ./programs/kanata
     ./programs/stylix
     ./programs/bluetooth
+    ./programs/podman
   ];
 
   # Bootloader.
