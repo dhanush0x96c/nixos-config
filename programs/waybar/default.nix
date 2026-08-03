@@ -21,10 +21,6 @@ in
         source = ./rebuild-status.sh;
         executable = true;
       };
-      "waybar/rebuild.sh" = {
-        source = ./rebuild.sh;
-        executable = true;
-      };
       "waybar/colors.css".text = ''
         @define-color base   ${colors.base00};
         @define-color mantle ${colors.base01};

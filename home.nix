@@ -19,6 +19,7 @@
     ./programs/vscode
     ./programs/mpv
     ./programs/hyprland
+    ./programs/rebuild
     ./programs/stylix/kde.nix
     ./programs/packages.nix
     ./programs/firefox

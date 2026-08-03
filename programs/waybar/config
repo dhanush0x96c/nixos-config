@@ -172,6 +172,6 @@
     "return-type": "json",
     "interval": 2,
     "exec": "~/.config/waybar/rebuild-status.sh",
-    "on-click": "~/.config/waybar/rebuild.sh"
+    "on-click": "~/.local/bin/rebuild.sh"
   }
 }
