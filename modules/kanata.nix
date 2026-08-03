@@ -4,7 +4,7 @@
   services.kanata = {
     enable = true;
     keyboards.default = {
-      configFile = ./config.kbd;
+      configFile = ./kanata-config.kbd;
     };
   };
 }

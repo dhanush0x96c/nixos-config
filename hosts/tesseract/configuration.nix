@@ -2,11 +2,10 @@
 
 {
   imports = [
-    ../../programs/kanata
-    ../../programs/stylix
-    ../../programs/bluetooth
-    ../../programs/podman
-
+    ../../modules/kanata.nix
+    ../../modules/stylix.nix
+    ../../modules/bluetooth.nix
+    ../../modules/podman.nix
     ../../modules/boot.nix
     ../../modules/networking.nix
     ../../modules/users.nix
