@@ -14,6 +14,7 @@
     sshfs
     tldr
     unzip
+    rclone
 
     # Editors/Agents
     antigravity-cli
