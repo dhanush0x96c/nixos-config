@@ -46,6 +46,15 @@
 
             bindkey ' ' magic-space
 
+            # Standard keybindings for Home, End, Delete keys
+            bindkey '^[[3~' delete-char
+            bindkey '^[[H' beginning-of-line
+            bindkey '^[[1~' beginning-of-line
+            bindkey '^[[F' end-of-line
+            bindkey '^[[4~' end-of-line
+            bindkey '^[OH' beginning-of-line
+            bindkey '^[OF' end-of-line
+
             bindkey '^P' history-search-backward
             bindkey '^N' history-search-forward
 
