@@ -20,13 +20,13 @@
     ./programs/mpv
     ./programs/hyprland
     ./programs/rebuild
-    ./programs/stylix/kde.nix
+    ./programs/stylix
     ./programs/packages.nix
     ./programs/firefox
     ./programs/zen-browser
     ./programs/clipboard
-    ./programs/bluetooth/home.nix
-    ./programs/podman/home.nix
+    ./programs/bluetooth
+    ./programs/podman
     ./programs/btop
     ./programs/fd
     ./programs/jq
