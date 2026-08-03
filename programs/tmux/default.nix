@@ -38,6 +38,7 @@
       set -as terminal-features ",*:RGB"
       set -as terminal-features ",*:hyperlinks"
       set -g status-position top
+      set -g renumber-windows on
 
       bind -n M-Left select-pane -L
       bind -n M-Right select-pane -R
