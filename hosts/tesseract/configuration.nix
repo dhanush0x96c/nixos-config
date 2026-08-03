@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   inputs,
   ...
@@ -13,29 +12,34 @@
     ../../programs/bluetooth
     ../../programs/podman
   ];
-
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+  };
 
-  networking.hostName = "tesseract";
-
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "tesseract";
+    networkmanager.enable = true;
+  };
 
   time.timeZone = "Asia/Kolkata";
 
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
+    };
   };
 
   services.xserver.xkb = {
@@ -43,12 +47,15 @@
     variant = "";
   };
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  nix.settings.warn-dirty = false;
+  nix = {
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      warn-dirty = false;
+    };
+  };
 
   users.users."dhanush" = {
     isNormalUser = true;
@@ -57,32 +64,31 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [ ];
     shell = pkgs.zsh;
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  programs.zsh.enable = true;
-  environment.shells = with pkgs; [ zsh ];
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
+  programs = {
+    zsh.enable = true;
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+    };
+    fuse.enable = true;
   };
+
+  environment.shells = with pkgs; [ zsh ];
 
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
   };
 
-  programs.fuse.enable = true;
-
   home-manager = {
     users = {
       "dhanush" = import ../../home.nix;
     };
-
     useGlobalPkgs = true;
     useUserPackages = true;
 
