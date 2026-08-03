@@ -37,7 +37,7 @@
         };
 
         modules = [
-          ./configuration.nix
+          ./hosts/tesseract
           inputs.stylix.nixosModules.stylix
         ];
       };

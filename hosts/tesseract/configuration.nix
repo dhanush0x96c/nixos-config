@@ -11,13 +11,11 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    ./programs/kanata
-    ./programs/stylix
-    ./programs/bluetooth
-    ./programs/podman
+    ../../programs/kanata
+    ../../programs/stylix
+    ../../programs/bluetooth
+    ../../programs/podman
   ];
 
   # Bootloader.
@@ -109,7 +107,7 @@
 
   home-manager = {
     users = {
-      "dhanush" = import ./home.nix;
+      "dhanush" = import ../../home.nix;
     };
 
     useGlobalPkgs = true;
