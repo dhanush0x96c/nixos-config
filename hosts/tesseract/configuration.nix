@@ -1,12 +1,7 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   imports = [
-    inputs.home-manager.nixosModules.default
     ../../programs/kanata
     ../../programs/stylix
     ../../programs/bluetooth
@@ -83,18 +78,6 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-  };
-
-  home-manager = {
-    users = {
-      "dhanush" = import ../../home.nix;
-    };
-    useGlobalPkgs = true;
-    useUserPackages = true;
-
-    extraSpecialArgs = {
-      inherit inputs;
-    };
   };
 
   security.sudo.extraRules = [

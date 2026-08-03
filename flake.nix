@@ -22,6 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   outputs =
     inputs@{
       self,
@@ -31,14 +32,20 @@
     }:
     {
       nixosConfigurations.tesseract = nixpkgs.lib.nixosSystem {
-
-        specialArgs = {
-          inherit inputs;
-        };
-
         modules = [
           ./hosts/tesseract
           inputs.stylix.nixosModules.stylix
+          inputs.home-manager.nixosModules.default
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.dhanush = import ./home.nix;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+            };
+          }
         ];
       };
     };
