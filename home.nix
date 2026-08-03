@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -32,17 +32,19 @@
     ./programs/jq
     ./programs/ripgrep
   ];
+  home = {
 
-  home.username = "dhanush";
-  home.homeDirectory = "/home/dhanush";
+    username = "dhanush";
+    homeDirectory = "/home/dhanush";
 
-  home.stateVersion = "26.05";
+    stateVersion = "26.05";
 
-  # TODO: This was a temporary fix to remove the warning
-  home.pointerCursor.enable = true;
+    # TODO: This was a temporary fix to remove the warning
+    pointerCursor.enable = true;
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
   };
 
   programs.home-manager.enable = true;
