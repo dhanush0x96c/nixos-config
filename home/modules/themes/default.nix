@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./stylix.nix
+    ./kde-icons.nix
   ];
 }
