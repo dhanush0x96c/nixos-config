@@ -2,35 +2,20 @@
 
 {
   imports = [
-    ../programs/kitty
-    ../programs/yazi
-    ../programs/git
-    ../programs/bat
-    ../programs/wofi
-    ../programs/tmux
-    ../programs/waybar
-    ../programs/eza
-    ../programs/fzf
-    ../programs/zoxide
-    ../programs/zsh
-    ../programs/mako
-    ../programs/neovim
-    ../programs/zed
-    ../programs/vscode
-    ../programs/mpv
-    ../programs/hyprland
-    ../programs/rebuild
-    ../programs/stylix
-    ../programs/packages.nix
-    ../programs/firefox
-    ../programs/zen-browser
-    ../programs/clipboard
-    ../programs/bluetooth
-    ../programs/podman
-    ../programs/btop
-    ../programs/fd
-    ../programs/jq
-    ../programs/ripgrep
+    ../modules/shells
+    ../modules/cli
+    ../modules/editors
+    ../modules/hyprland
+    ../modules/terminal
+    ../modules/system
+    ../modules/themes
+    ../modules/vcs
+
+    # programs
+    ../modules/programs/firefox
+    ../modules/programs/mpv
+    ../modules/programs/packages.nix
+    ../modules/programs/zen-browser
   ];
   home = {
 
