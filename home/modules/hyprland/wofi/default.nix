@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   programs.wofi = {
     enable = true;
@@ -9,7 +9,7 @@
       height = 400;
       always_parse_args = true;
       show_all = false;
-      term = "kitty";
+      term = config.my.terminal.name;
       hide_scroll = true;
       print_command = true;
       insensitive = true;

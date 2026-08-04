@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   stylix.targets.kitty = {
@@ -23,5 +23,12 @@
     extraConfig = ''
       mouse_map ctrl+left click grabbed,ungrabbed mouse_handle_click selection link prompt
     '';
+  };
+
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [ config.my.terminal.desktop ];
+    };
   };
 }
