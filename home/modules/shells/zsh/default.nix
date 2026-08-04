@@ -72,6 +72,14 @@
 
             setopt AUTO_CD
 
+            clear-screen() {
+              zle .clear-screen
+              if (( $+functions[omp_repaint_prompt] )); then
+                omp_repaint_prompt
+              fi
+            }
+            zle -N clear-screen
+
             bindkey -s '^Xgc' 'git commit -m ""\C-b'
             bindkey -s '^Xr' 'nix run "nixpkgs#"\C-b'
           '';
