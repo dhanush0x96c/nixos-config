@@ -25,9 +25,7 @@
 
   outputs =
     inputs@{
-      self,
       nixpkgs,
-      zen-browser,
       ...
     }:
     {

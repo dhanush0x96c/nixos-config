@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   home.file.".local/bin/rebuild.sh" = {
