@@ -4,7 +4,7 @@
   imports = [
     ../modules/shells
     ../modules/cli
-    ../modules/editors
+    ../modules/development
     ../modules/hyprland
     ../modules/terminal
     ../modules/system
@@ -12,10 +12,10 @@
     ../modules/vcs
 
     # programs
-    ../modules/programs/firefox
-    ../modules/programs/mpv
-    ../modules/programs/packages.nix
-    ../modules/programs/zen-browser
+    ../modules/programs/firefox.nix
+    ../modules/programs/mpv.nix
+    ../modules/programs/rclone.nix
+    ../modules/programs/zen-browser.nix
   ];
   home = {
 

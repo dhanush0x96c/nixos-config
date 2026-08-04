@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -9,5 +9,13 @@
     ./jq.nix
     ./ripgrep.nix
     ./zoxide.nix
+  ];
+
+  home.packages = with pkgs; [
+    duf
+    dust
+    fx
+    tldr
+    unzip
   ];
 }
