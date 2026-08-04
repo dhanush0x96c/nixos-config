@@ -12,6 +12,7 @@
     ../../modules/locale.nix
     ../../modules/networking.nix
     ../../modules/nix.nix
+    ../../modules/plymouth.nix
     ../../modules/podman.nix
     ../../modules/sddm.nix
     ../../modules/security.nix
