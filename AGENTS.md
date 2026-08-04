@@ -23,27 +23,64 @@ This repository manages the system and user configurations for the host **`tesse
 .
 ├── flake.nix                  # Flake entry point, input channels, and nixosConfigurations
 ├── flake.lock                 # Locked versions of flake inputs
-├── configuration.nix          # System-level NixOS configuration (boot, kernel, user, sudo)
-├── hardware-configuration.nix # Auto-generated hardware scan results
+├── AGENTS.md                  # Agent instructions and guidelines
+├── hosts/                     # Host-specific configurations
+│   └── tesseract/             # Configurations specific to the host 'tesseract'
+│       ├── default.nix        # Aggregate imports for the host config
+│       ├── configuration.nix  # System-level configuration (imports system modules)
+│       └── hardware-configuration.nix # Auto-generated hardware scan results
+├── modules/                   # Modular system-level NixOS configurations
+│   ├── kanata/                # Kanata daemon and key mapping configs
+│   │   ├── default.nix
+│   │   └── kanata-config.kbd
+│   ├── themes/                # Theme and font configuration modules via Stylix
+│   │   ├── default.nix
+│   │   ├── cursor.nix
+│   │   ├── fonts.nix
+│   │   ├── icons.nix
+│   │   └── kde-icons.nix
+│   ├── bluetooth.nix          # Bluetooth system service enabling
+│   ├── boot.nix               # System boot loader & kernel parameters
+│   ├── compatibility.nix      # System compatibility configuration
+│   ├── fuse.nix               # FUSE configuration
+│   ├── hyprland.nix           # Hyprland system enabling config
+│   ├── keyboard.nix           # Console keyboard configuration
+│   ├── locale.nix             # System locale & timezone configuration
+│   ├── networking.nix         # Networking, firewall, and host configurations
+│   ├── nix.nix                # Nix garbage collection, channels, and optimization settings
+│   ├── plymouth.nix           # Splash screen setup
+│   ├── podman.nix             # Podman system service configuration
+│   ├── sddm.nix               # SDDM display manager system service & theme
+│   ├── security.nix           # Sudo, Polkit, and general security settings
+│   └── users.nix              # Primary user account setup (dhanush)
 └── home/                      # User-level Home Manager configurations
     ├── dhanush/
-    │   └── default.nix        # Primary user Home Manager entry point
-    └── programs/              # Modular program & service configurations
-        ├── packages.nix       # General user package declarations (CLI, Browsers, DevTools)
-        ├── bat/               # Bat syntax highlighter config
-        ├── eza/               # Eza ls replacement config
-        ├── fzf/               # Fzf fuzzy finder config
-        ├── git/               # Git VCS configuration
-        ├── kanata/            # Kanata key remapping daemon
-        ├── kitty/             # Kitty terminal emulator config
-        ├── neovim/            # Neovim editor configuration
-        ├── stylix/            # System theme & styling rules
-        ├── tmux/              # Tmux terminal multiplexer config
-        ├── waybar/            # Waybar status bar config
-        ├── wofi/              # Wofi application launcher config
-        ├── yazi/              # Yazi terminal file manager config
-        ├── zoxide/            # Zoxide directory jumper config
-        └── zsh/               # Zsh shell configuration
+    │   ├── default.nix        # Primary user Home Manager entry point (imports modules)
+    │   └── home.nix           # Core home manager settings (username, homeDirectory, stateVersion)
+    └── modules/               # Modular user program, terminal, and shell configurations
+        ├── cli/               # CLI utility configs (bat, eza, fd, fzf, jq, ripgrep, zoxide)
+        │   └── default.nix    # Imports CLI configs and defines general packages (duf, dust, fx, tldr, unzip)
+        ├── compatibility.nix  # Compatibility layers for applications
+        ├── development/       # Development setups, compilers, and IDEs
+        │   ├── agents/        # AI developer agents (antigravity-cli, copilot, codex, opencode)
+        │   ├── editors/       # Editor setups (neovim, vscode, zed)
+        │   ├── default.nix    # Imports dev tools and defines system programming language tools (ffmpeg, python)
+        │   ├── go.nix         # Go compiler / toolchain setup
+        │   └── uv.nix         # Python uv packager setup
+        ├── hyprland/          # User Hyprland configuration, widgets, lock, and idle
+        │   ├── hypr/          # Hyprland custom script configuration (hyprland.lua)
+        │   ├── waybar/        # Waybar bar configurations & css
+        │   ├── wofi/          # Wofi search launcher css & config
+        │   ├── hypridle.nix   # Idle management configuration
+        │   ├── hyprlock.nix   # Lock screen setup
+        │   └── mako.nix       # Notification daemon configuration
+        ├── programs/          # Large applications (firefox, mpv, rclone, zen-browser)
+        ├── shells/            # Shell configurations (zsh)
+        ├── system/            # System monitors (btop), file managers (yazi), and custom rebuild tools
+        │   ├── rebuild/       # NixOS rebuild status script/helper
+        │   └── yazi.nix       # yazi configuration
+        ├── terminal/          # Terminal emulators (kitty, tmux)
+        └── vcs/               # Version control systems (git, lazygit, gh, delta)
 ```
 
 ---
@@ -51,10 +88,10 @@ This repository manages the system and user configurations for the host **`tesse
 ## 🛠️ Essential Commands & Workflows
 
 ### 1. Formatting Code
-- Formatting tool: `nixfmt` (installed in profile via [packages.nix](file:///home/dhanush/nixos-config/home/programs/packages.nix)).
+- Formatting tool: `nixfmt` (installed via [home/modules/development/default.nix](file:///home/dhanush/nixos-config/home/modules/development/default.nix)).
 - Format Nix code:
   ```bash
-  nixfmt *.nix home/**/*.nix
+  nixfmt *.nix hosts/**/*.nix modules/**/*.nix home/**/*.nix
   ```
 
 ---
@@ -62,20 +99,21 @@ This repository manages the system and user configurations for the host **`tesse
 ## 📐 Guidelines for AI Agents
 
 1. **Modularity First**:
-   - Do not bloat [configuration.nix](file:///home/dhanush/nixos-config/configuration.nix) or [default.nix](file:///home/dhanush/nixos-config/home/dhanush/default.nix) with inline tool configurations.
-   - Store application-specific configurations in dedicated subdirectories under `home/programs/<app>/` and import them in `home/dhanush/default.nix` or `configuration.nix`.
+   - Do not bloat configuration or entrypoint files with inline configurations.
+   - Store system-level services or environment settings in separate files/folders under [modules/](file:///home/dhanush/nixos-config/modules/) and import them in [hosts/tesseract/configuration.nix](file:///home/dhanush/nixos-config/hosts/tesseract/configuration.nix).
+   - Store user-level program or service configurations in dedicated files/folders under [home/modules/](file:///home/dhanush/nixos-config/home/modules/) and import them in their respective category's `default.nix` (which is imported in [home/dhanush/default.nix](file:///home/dhanush/nixos-config/home/dhanush/default.nix)).
 
 2. **System vs. User Scope**:
-   - **`configuration.nix`**: System daemons, hardware, bootloader, kernel modules, display manager, user accounts, and system security rules.
-   - **`home/dhanush/default.nix` / `home/programs/`**: User environment, shell aliases, dotfiles, desktop tools, editors, and CLI utilities.
+   - **System Scope ([hosts/tesseract/configuration.nix](file:///home/dhanush/nixos-config/hosts/tesseract/configuration.nix) / [modules/](file:///home/dhanush/nixos-config/modules/))**: System daemons, hardware, bootloader, kernel modules, display manager, user accounts, and system security rules.
+   - **User Scope ([home/dhanush/](file:///home/dhanush/nixos-config/home/dhanush/) / [home/modules/](file:///home/dhanush/nixos-config/home/modules/))**: User environment, shell aliases, dotfiles, desktop tools, editors, and CLI utilities.
 
 3. **Package Additions**:
-   - Add general user CLI tools, browsers, dev tools, and editors to [packages.nix](file:///home/dhanush/nixos-config/home/programs/packages.nix).
+   - Add general user CLI tools, browsers, dev tools, and editors to the appropriate category's `default.nix` file (e.g. general dev packages to [home/modules/development/default.nix](file:///home/dhanush/nixos-config/home/modules/development/default.nix), general CLI tools to [home/modules/cli/default.nix](file:///home/dhanush/nixos-config/home/modules/cli/default.nix)).
    - Use `inputs.<input_name>` syntax when referencing flake inputs (e.g., `inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default`).
 
 4. **Preserve System Rules**:
-   - Keep existing `stateVersion` settings (`26.05`) intact.
-   - Maintain security sudo rules in `configuration.nix`.
+   - Keep existing `stateVersion` settings (`26.05`) intact (both in [hosts/tesseract/configuration.nix](file:///home/dhanush/nixos-config/hosts/tesseract/configuration.nix) and [home/dhanush/home.nix](file:///home/dhanush/nixos-config/home/dhanush/home.nix)).
+   - Maintain security/sudo rules in [hosts/tesseract/configuration.nix](file:///home/dhanush/nixos-config/hosts/tesseract/configuration.nix) or system security module [modules/security.nix](file:///home/dhanush/nixos-config/modules/security.nix).
 
 5. **Git Operations**:
    - **Never use git**: Do not run any `git` command (including `git add`, `git commit`, `git status`, etc.) under any circumstances. Staging, committing, and managing repository state is the sole responsibility of the user.
