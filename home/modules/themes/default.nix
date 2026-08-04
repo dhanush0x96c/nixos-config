@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./stylix
+    ./stylix.nix
   ];
 }

@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./git
-    ./delta
-    ./gh
-    ./lazygit
+    ./git.nix
+    ./delta.nix
+    ./gh.nix
+    ./lazygit.nix
   ];
 }

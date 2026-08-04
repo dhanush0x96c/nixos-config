@@ -3,7 +3,7 @@
 {
   imports = [
     ./neovim
-    ./vscode
-    ./zed
+    ./vscode.nix
+    ./zed.nix
   ];
 }

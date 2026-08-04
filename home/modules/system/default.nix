@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ./bluetooth
-    ./btop
-    ./clipboard
-    ./podman
+    ./bluetooth.nix
+    ./btop.nix
+    ./clipboard.nix
+    ./podman.nix
     ./rebuild
-    ./yazi
+    ./yazi.nix
   ];
 }

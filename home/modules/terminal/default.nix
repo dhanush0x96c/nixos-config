@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./kitty
-    ./tmux
+    ./kitty.nix
+    ./tmux.nix
   ];
 }

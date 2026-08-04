@@ -2,12 +2,12 @@
 
 {
   imports = [
-    ./bat
-    ./eza
-    ./fd
-    ./fzf
-    ./jq
-    ./ripgrep
-    ./zoxide
+    ./bat.nix
+    ./eza.nix
+    ./fd.nix
+    ./fzf.nix
+    ./jq.nix
+    ./ripgrep.nix
+    ./zoxide.nix
   ];
 }
