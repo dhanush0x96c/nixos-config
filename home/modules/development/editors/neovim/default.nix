@@ -3,6 +3,8 @@
 {
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
+
     extraPackages = with pkgs; [
       # Core build & search tools
       gcc
