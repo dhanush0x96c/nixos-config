@@ -6,5 +6,6 @@
     ./delta.nix
     ./gh.nix
     ./lazygit.nix
+    ./jujutsu.nix
   ];
 }
