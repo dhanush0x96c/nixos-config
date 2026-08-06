@@ -6,6 +6,10 @@
         name = config.programs.git.settings.user.name;
         email = config.programs.git.settings.user.email;
       };
+      ui = {
+        pager = "delta";
+        diff-formatter = ":git";
+      };
     };
   };
 }
