@@ -45,7 +45,7 @@ type = "git"
 style = "plain"
 foreground = "#@COLOR_GREEN@"
 template = """ {{ .UpstreamIcon }} \
-{{ .HEAD }}\
+{{ if .Detached }}\uf1fa{{ trunc 7 .Commit.Sha }}{{ else }}{{ .HEAD }}{{ end }}\
 {{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}\
 {{ if gt .StashCount 0 }} *{{ .StashCount }}{{ end }}\
 <#@COLOR_YELLOW@>{{ if .Staging.Changed }} [{{ .Staging.String }}]{{ end }}\
