@@ -1,35 +1,63 @@
-{
-  pkgs,
-  config,
-  ...
-}:
+{ config, ... }:
 
 let
   c = config.lib.stylix.colors;
-  toml = builtins.readFile ./oh-my-posh.toml;
-  themedToml =
-    builtins.replaceStrings
-      [
-        "@COLOR_FG@"
-        "@COLOR_BLUE@"
-        "@COLOR_GREEN@"
-        "@COLOR_YELLOW@"
-        "@COLOR_RED@"
-      ]
-      [
-        c.base05
-        c.base0D
-        c.base0B
-        c.base0A
-        c.base08
-      ]
-      toml;
+  seg = path: import path { inherit c; };
 in
 {
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
-    configFile = pkgs.writeText "oh-my-posh.toml" themedToml;
+    settings = {
+      version = 4;
+      final_space = true;
+      console_title_template = "{{ .Shell }} in {{ .Folder }}";
+
+      transient_prompt = {
+        foreground_templates = [
+          "{{ if eq .Code 0 }}#${c.base0B}{{ end }}"
+          "{{ if ne .Code 0 }}#${c.base08}{{ end }}"
+        ];
+        template = "❯ ";
+      };
+
+      secondary_prompt = {
+        foreground = "#${c.base0B}";
+        template = "❯❯";
+      };
+
+      blocks = [
+        {
+          type = "prompt";
+          alignment = "left";
+
+          segments = [
+            (seg ./segments/os.nix)
+            (seg ./segments/path.nix)
+            (seg ./segments/git.nix)
+          ];
+        }
+        {
+          type = "prompt";
+          alignment = "right";
+          overflow = "hidden";
+
+          segments = [
+            (seg ./segments/executiontime.nix)
+            (seg ./segments/status.nix)
+          ];
+        }
+        {
+          type = "prompt";
+          alignment = "left";
+          newline = true;
+
+          segments = [
+            (seg ./segments/prompt.nix)
+          ];
+        }
+      ];
+    };
   };
 }
