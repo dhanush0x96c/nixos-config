@@ -5,7 +5,7 @@
   foreground = "#${c.base0D}";
   template = builtins.concatStringsSep "" [
     "{{ if not .Writable }} {{ end }}"
-    "{{ if .Segments.Git }}{{ .Folder }}"
+    "{{ if .Segments.Git }}{{ .Segments.Git.RepoName }}{{ if .Segments.Git.RelativeDir }}/{{ .Segments.Git.RelativeDir }}{{ end }}"
     "{{ else }}{{ .Path }}{{ end }}"
   ];
   options = {
