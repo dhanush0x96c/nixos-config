@@ -7,5 +7,6 @@
     ./gh.nix
     ./lazygit.nix
     ./jujutsu.nix
+    ./jjui.nix
   ];
 }
