@@ -11,12 +11,15 @@
       bindkey '^[[F' end-of-line
       bindkey '^[[4~' end-of-line
       bindkey '^[OF' end-of-line
-      bindkey '^P' history-search-backward
-      bindkey '^[[A' history-search-backward
-      bindkey '^[OA' history-search-backward
-      bindkey '^N' history-search-forward
-      bindkey '^[[B' history-search-forward
-      bindkey '^[OB' history-search-forward
+      autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+      zle -N up-line-or-beginning-search
+      zle -N down-line-or-beginning-search
+      bindkey '^P' up-line-or-beginning-search
+      bindkey '^[[A' up-line-or-beginning-search
+      bindkey '^[OA' up-line-or-beginning-search
+      bindkey '^N' down-line-or-beginning-search
+      bindkey '^[[B' down-line-or-beginning-search
+      bindkey '^[OB' down-line-or-beginning-search
       bindkey '^W' vi-backward-kill-word
       bindkey '^[b' vi-backward-word
       bindkey '^[f' vi-forward-word
