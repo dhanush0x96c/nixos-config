@@ -7,6 +7,7 @@
         email = config.programs.git.settings.user.email;
       };
       ui = {
+        default-command = "log";
         pager = "delta";
         diff-formatter = ":git";
       };
