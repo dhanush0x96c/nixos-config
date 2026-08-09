@@ -11,6 +11,11 @@
         pager = "delta";
         diff-formatter = ":git";
       };
+      template-aliases = {
+        "format_short_signature(signature)" = "signature.email().local()";
+        "format_timestamp(timestamp)" = "timestamp.ago()";
+        "commit_timestamp(commit)" = "commit.author().timestamp()";
+      };
     };
   };
 }
