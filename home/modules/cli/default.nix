@@ -6,7 +6,9 @@
     ./eza.nix
     ./fd.nix
     ./fzf.nix
+    ./gpg.nix
     ./jq.nix
+    ./pass.nix
     ./ripgrep.nix
     ./zoxide.nix
   ];
