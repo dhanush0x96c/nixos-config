@@ -34,6 +34,7 @@ in
 
           segments = [
             (seg ./segments/os.nix)
+            (seg ./segments/shell.nix)
             (seg ./segments/path.nix)
             (seg ./segments/vcs_common.nix)
             (seg ./segments/git.nix)
