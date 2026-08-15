@@ -281,6 +281,7 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal .. " --class bluetui -e bluetui"))
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("keepassxc"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
