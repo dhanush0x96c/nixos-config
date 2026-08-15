@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.zen-browser.homeModules.default
+    ./settings.nix
   ];
 
   programs.zen-browser = {
