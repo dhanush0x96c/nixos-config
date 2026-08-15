@@ -25,6 +25,7 @@
       bindkey '^[f' vi-forward-word
 
       bindkey -s '^Xr' 'nix run "nixpkgs#"\C-b'
+      bindkey -s '^Xs' 'nix shell "nixpkgs#"\C-b'
       bindkey -s '^Xgc' 'git commit -m ""\C-b'
 
       copy-buffer() {
