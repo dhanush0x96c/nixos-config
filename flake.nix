@@ -21,6 +21,11 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -34,6 +39,7 @@
           ./hosts/tesseract
           inputs.stylix.nixosModules.stylix
           inputs.home-manager.nixosModules.default
+          inputs.nur.modules.nixos.default
           {
             home-manager = {
               useGlobalPkgs = true;
