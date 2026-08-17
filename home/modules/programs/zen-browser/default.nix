@@ -6,6 +6,7 @@
     ./bookmarks.nix
     ./extensions.nix
     ./settings.nix
+    ./theme.nix
   ];
 
   programs.zen-browser = {
