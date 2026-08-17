@@ -7,6 +7,7 @@
     ./extensions.nix
     ./settings.nix
     ./theme.nix
+    ./user-styles
   ];
 
   programs.zen-browser = {
