@@ -348,7 +348,7 @@ hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- NixOS Rebuild
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("~/.local/bin/rebuild.sh"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("rebuild"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----

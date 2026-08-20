@@ -1,8 +1,22 @@
-{ ... }:
+{ pkgs, ... }:
 
+let
+  flakePath = "/home/dhanush/nixos-config";
+  flakeName = "tesseract";
+in
 {
-  home.file.".local/bin/rebuild.sh" = {
-    source = ./rebuild.sh;
-    executable = true;
-  };
+  home.packages = [
+    (pkgs.writeShellScriptBin "rebuild" (
+      builtins.replaceStrings
+        [
+          "@FLAKE_PATH@"
+          "@FLAKE_NAME@"
+        ]
+        [
+          flakePath
+          flakeName
+        ]
+        (builtins.readFile ./rebuild.sh)
+    ))
+  ];
 }
