@@ -280,7 +280,7 @@ hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal .. " --class bluetui -e bluetui"))
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("bluetooth-connect-last"))
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("keepassxc"))
 
 -- Move focus with mainMod + arrow keys
@@ -397,11 +397,5 @@ hl.window_rule({
 	match = { class = "hyprland-run" },
 
 	move = "20 monitor_h-120",
-	float = true,
-})
-
-hl.window_rule({
-	name = "bluetui-float",
-	match = { class = "bluetui" },
 	float = true,
 })
