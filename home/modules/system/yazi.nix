@@ -1,5 +1,48 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  programs.yazi.enable = true;
+  home.packages = [ pkgs.glow ];
+
+  programs.yazi = {
+    enable = true;
+    plugins = {
+      clipboard = pkgs.yaziPlugins.clipboard;
+      piper = pkgs.yaziPlugins.piper;
+    };
+    settings = {
+      plugin = {
+        prepend_previewers = [
+          {
+            url = "*.md";
+            run = "piper -- glow -s dark \"$1\"";
+          }
+        ];
+      };
+    };
+    keymap = {
+      mgr.prepend_keymap = [
+        {
+          on = [ "y" ];
+          run = [
+            "yank"
+            "plugin clipboard -- --action=copy"
+          ];
+          desc = "Yank selected files (copy)";
+        }
+        {
+          on = [ "x" ];
+          run = [
+            "yank --cut"
+            "plugin clipboard -- --action=copy"
+          ];
+          desc = "Yank selected files (cut)";
+        }
+        {
+          on = [ "<C-p>" ];
+          run = [ "plugin clipboard -- --action=paste" ];
+          desc = "Paste yanked system clipboard files";
+        }
+      ];
+    };
+  };
 }
