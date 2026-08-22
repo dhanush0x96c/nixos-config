@@ -10,7 +10,6 @@
 
   home.packages = with pkgs; [
     ffmpeg
-    nixfmt
     python3
   ];
 }

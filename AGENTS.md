@@ -88,11 +88,9 @@ This repository manages the system and user configurations for the host **`tesse
 ## 🛠️ Essential Commands & Workflows
 
 ### 1. Formatting Code
-- Formatting tool: `nixfmt` (installed via [home/modules/development/default.nix](home/modules/development/default.nix)).
-- Format Nix code:
-  ```bash
-  nixfmt *.nix hosts/**/*.nix modules/**/*.nix home/**/*.nix
-  ```
+
+- Every changed file must be formatted using the appropriate formatter for its file type (not just Nix files).
+- Formatter tools can be executed on-demand via `nix run` (e.g., `nix run nixpkgs#nixfmt-rfc-style -- <file>`, `nix run nixpkgs#stylua -- <file>`).
 
 ---
 
@@ -127,4 +125,5 @@ This repository manages the system and user configurations for the host **`tesse
 ## 🧪 Verification Protocol
 
 Before declaring any change complete:
-1. Format modified files using `nixfmt`.
+
+1. Format modified files using the appropriate formatter (e.g., via `nix run`).
