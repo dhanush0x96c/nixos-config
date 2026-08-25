@@ -11,6 +11,8 @@
     enable = true;
     nixpkgs.source = inputs.nixpkgs;
 
+    defaultEditor = true;
+
     imports = [
       ./config
     ];
