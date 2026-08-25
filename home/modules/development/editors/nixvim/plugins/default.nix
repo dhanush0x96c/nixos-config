@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./lualine.nix
     ./mini
     ./snacks
     ./treesitter.nix
