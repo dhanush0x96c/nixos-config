@@ -15,6 +15,7 @@
 
     imports = [
       ./config
+      ./plugins
     ];
   };
 }
