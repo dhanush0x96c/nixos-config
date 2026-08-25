@@ -56,7 +56,7 @@ in
       [urgency=high]
       border-color=${colors.base08}
       background-color=${colors.base01}
-      default-timeout=0
+      default-timeout=10000
     '';
   };
 }
