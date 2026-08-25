@@ -5,5 +5,6 @@
 
   imports = [
     ./dashboard.nix
+    ./picker.nix
   ];
 }
