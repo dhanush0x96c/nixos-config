@@ -8,6 +8,7 @@
     ./bufdelete.nix
     ./dashboard.nix
     ./explorer.nix
+    ./indent.nix
     ./input.nix
     ./notifier.nix
     ./picker.nix
