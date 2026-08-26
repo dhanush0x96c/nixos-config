@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./blink-cmp.nix
     ./bufferline.nix
     ./flash.nix
     ./gitsigns.nix
