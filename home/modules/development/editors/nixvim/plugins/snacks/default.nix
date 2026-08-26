@@ -5,6 +5,7 @@
 
   imports = [
     ./dashboard.nix
+    ./notifier.nix
     ./picker.nix
   ];
 }
