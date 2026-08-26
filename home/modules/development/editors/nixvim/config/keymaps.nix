@@ -48,38 +48,13 @@
       options.desc = "Delete Window";
     }
 
-    # Buffer navigation & management
-    {
-      mode = "n";
-      key = "<S-h>";
-      action = "<cmd>bprevious<cr>";
-      options.desc = "Prev Buffer";
-    }
-    {
-      mode = "n";
-      key = "<S-l>";
-      action = "<cmd>bnext<cr>";
-      options.desc = "Next Buffer";
-    }
-    {
-      mode = "n";
-      key = "[b";
-      action = "<cmd>bprevious<cr>";
-      options.desc = "Prev Buffer";
-    }
-    {
-      mode = "n";
-      key = "]b";
-      action = "<cmd>bnext<cr>";
-      options.desc = "Next Buffer";
-    }
+    # Buffer management
     {
       mode = "n";
       key = "<leader>bb";
       action = "<cmd>e #<cr>";
       options.desc = "Switch to Other Buffer";
     }
-
     # Clear search highlight
     {
       mode = [

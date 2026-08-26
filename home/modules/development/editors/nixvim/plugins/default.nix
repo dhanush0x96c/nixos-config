@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./bufferline.nix
     ./lualine.nix
     ./mini
     ./noice.nix
