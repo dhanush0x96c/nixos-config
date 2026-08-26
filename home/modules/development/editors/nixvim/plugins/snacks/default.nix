@@ -13,6 +13,7 @@
     ./input.nix
     ./notifier.nix
     ./picker.nix
+    ./scratch.nix
     ./scroll.nix
   ];
 }
