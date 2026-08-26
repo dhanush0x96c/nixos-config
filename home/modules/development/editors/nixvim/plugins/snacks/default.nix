@@ -15,5 +15,6 @@
     ./picker.nix
     ./scratch.nix
     ./scroll.nix
+    ./statuscolumn.nix
   ];
 }

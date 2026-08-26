@@ -4,6 +4,7 @@
   imports = [
     ./bufferline.nix
     ./flash.nix
+    ./gitsigns.nix
     ./lualine.nix
     ./mini
     ./noice.nix
