@@ -12,5 +12,6 @@
     ./input.nix
     ./notifier.nix
     ./picker.nix
+    ./scroll.nix
   ];
 }
