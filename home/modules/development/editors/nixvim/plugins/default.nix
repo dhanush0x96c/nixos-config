@@ -3,6 +3,7 @@
 {
   imports = [
     ./bufferline.nix
+    ./flash.nix
     ./lualine.nix
     ./mini
     ./noice.nix
