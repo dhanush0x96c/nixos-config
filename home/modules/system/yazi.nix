@@ -6,7 +6,7 @@
   programs.yazi = {
     enable = true;
     plugins = {
-      clipboard = pkgs.yaziPlugins.clipboard;
+      system-clipboard = pkgs.yaziPlugins.clipboard;
       piper = pkgs.yaziPlugins.piper;
     };
     settings = {
@@ -25,7 +25,7 @@
           on = [ "y" ];
           run = [
             "yank"
-            "plugin clipboard -- --action=copy"
+            "plugin system-clipboard -- --action=copy"
           ];
           desc = "Yank selected files (copy)";
         }
@@ -33,13 +33,13 @@
           on = [ "x" ];
           run = [
             "yank --cut"
-            "plugin clipboard -- --action=copy"
+            "plugin system-clipboard -- --action=copy"
           ];
           desc = "Yank selected files (cut)";
         }
         {
           on = [ "<C-p>" ];
-          run = [ "plugin clipboard -- --action=paste" ];
+          run = [ "plugin system-clipboard -- --action=paste" ];
           desc = "Paste yanked system clipboard files";
         }
       ];
