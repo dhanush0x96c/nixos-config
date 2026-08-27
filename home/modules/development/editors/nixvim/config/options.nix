@@ -40,5 +40,9 @@
     confirm = true;
     updatetime = 200;
     timeoutlen = 300;
+
+    # Folding
+    foldlevel = 99;
+    foldtext = "";
   };
 }

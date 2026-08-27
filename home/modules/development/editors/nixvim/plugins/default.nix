@@ -15,7 +15,7 @@
     ./noice.nix
     ./snacks
     ./todo-comments.nix
-    ./treesitter.nix
+    ./treesitter
     ./trouble.nix
     ./web-devicons.nix
     ./which-key.nix
