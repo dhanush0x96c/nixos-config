@@ -1,4 +1,5 @@
 { c }:
+
 let
   cmds = {
     commit_id = ''"jj" "log" "-r" "@" "--no-graph" "-T" "commit_id.shortest()"'';

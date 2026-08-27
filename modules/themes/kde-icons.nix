@@ -1,4 +1,6 @@
-{ config, ... }: {
+{ config, ... }:
+
+{
   home-manager.users.dhanush = {
     xdg.configFile."kdeglobals".text = ''
       [Icons]

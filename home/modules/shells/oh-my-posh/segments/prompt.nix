@@ -1,4 +1,5 @@
 { c }:
+
 {
   type = "text";
   style = "plain";

@@ -13,39 +13,45 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = [
-    "xhci_pci"
-    "ahci"
-    "nvme"
-  ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
-
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/508c53b7-ca27-4b79-a6ab-691648fb2421";
-    fsType = "btrfs";
+  boot = {
+    initrd = {
+      availableKernelModules = [
+        "xhci_pci"
+        "ahci"
+        "nvme"
+      ];
+      kernelModules = [ ];
+    };
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
   };
 
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/508c53b7-ca27-4b79-a6ab-691648fb2421";
-    fsType = "btrfs";
-    options = [ "subvol=nix" ];
-  };
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/508c53b7-ca27-4b79-a6ab-691648fb2421";
+      fsType = "btrfs";
+    };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/508c53b7-ca27-4b79-a6ab-691648fb2421";
-    fsType = "btrfs";
-    options = [ "subvol=home" ];
-  };
+    "/nix" = {
+      device = "/dev/disk/by-uuid/508c53b7-ca27-4b79-a6ab-691648fb2421";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/BD9E-47CC";
-    fsType = "vfat";
-    options = [
-      "fmask=0077"
-      "dmask=0077"
-    ];
+    "/home" = {
+      device = "/dev/disk/by-uuid/508c53b7-ca27-4b79-a6ab-691648fb2421";
+      fsType = "btrfs";
+      options = [ "subvol=home" ];
+    };
+
+    "/boot" = {
+      device = "/dev/disk/by-uuid/BD9E-47CC";
+      fsType = "vfat";
+      options = [
+        "fmask=0077"
+        "dmask=0077"
+      ];
+    };
   };
 
   swapDevices = [

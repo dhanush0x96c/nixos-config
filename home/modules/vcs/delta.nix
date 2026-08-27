@@ -1,4 +1,5 @@
 { config, ... }:
+
 let
   c = config.lib.stylix.colors.withHashtag;
 in

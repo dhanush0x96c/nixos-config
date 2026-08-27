@@ -1,4 +1,4 @@
-{ ... }:
+_:
 
 {
   programs.zen-browser.profiles.default.bookmarks = {

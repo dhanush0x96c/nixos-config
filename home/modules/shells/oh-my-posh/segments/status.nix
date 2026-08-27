@@ -1,4 +1,5 @@
 { c }:
+
 {
   type = "status";
   style = "plain";

@@ -1,1 +1,5 @@
-{ ... }: { programs.jjui.enable = true; }
+_:
+
+{
+  programs.jjui.enable = true;
+}

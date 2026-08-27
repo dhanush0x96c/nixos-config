@@ -1,4 +1,4 @@
-{ ... }:
+_:
 
 {
   programs.github-copilot-cli = {

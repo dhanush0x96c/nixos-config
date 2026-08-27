@@ -1,4 +1,5 @@
 { config, osConfig, ... }:
+
 let
   c = config.lib.stylix.colors;
   fullName = osConfig.users.users.${config.home.username}.description;
