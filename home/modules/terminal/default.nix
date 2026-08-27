@@ -1,7 +1,8 @@
-{ lib, ... }:
+{ config, lib, ... }:
 
 {
   imports = [
+    ./ghostty.nix
     ./kitty.nix
     ./tmux.nix
   ];
@@ -16,6 +17,15 @@
       type = lib.types.str;
       default = "kitty.desktop";
       description = "Desktop file name of the preferred terminal emulator.";
+    };
+  };
+
+  config = {
+    xdg.terminal-exec = {
+      enable = true;
+      settings = {
+        default = [ config.my.terminal.desktop ];
+      };
     };
   };
 }
