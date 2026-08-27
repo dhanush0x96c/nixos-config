@@ -92,6 +92,20 @@ This repository manages the system and user configurations for the host **`tesse
 - Every changed file must be formatted using the appropriate formatter for its file type (not just Nix files).
 - Formatter tools can be executed on-demand via `nix run` (e.g., `nix run nixpkgs#nixfmt-rfc-style -- <file>`, `nix run nixpkgs#stylua -- <file>`).
 
+### 2. Inspecting Configuration Options
+
+- **Home Manager Options**: Use `man home-configuration.nix` rather than evaluating Nix expressions (`nix eval`).
+- **NixOS System Options**: Use `man configuration.nix`.
+- **Tips for Clean & Fast Searches**:
+  - Redirect `stderr` (`2>/dev/null`) to suppress `troff` layout warnings:
+    ```bash
+    # List all option declarations under a module namespace:
+    MANPAGER=cat man home-configuration.nix 2>/dev/null | grep -E '^\s+programs\.ghostty\.'
+
+    # Inspect a specific option with its type, default, and examples:
+    MANPAGER=cat man home-configuration.nix 2>/dev/null | grep -A 25 'programs\.ghostty\.settings'
+    ```
+
 ---
 
 ## 📐 Guidelines for AI Agents
@@ -119,6 +133,10 @@ This repository manages the system and user configurations for the host **`tesse
 
 6. **Nixos Rebuild Operations**:
    - **Never use `nixos-rebuild`**: Do not run the `nixos-rebuild` command (including `nixos-rebuild switch` or `nixos-rebuild build`) under any circumstances. Testing, building, and applying the system configuration is the user's responsibility.
+
+7. **Finding Configuration Options**:
+   - **Never use `nix eval` for option discovery**: Do not run `nix eval` to inspect or discover Home Manager or NixOS options, as it is slow and resource-heavy.
+   - **Use the manual pages**: Always look up Home Manager module options via `man home-configuration.nix 2>/dev/null` and NixOS system options via `man configuration.nix 2>/dev/null`.
 
 ---
 
