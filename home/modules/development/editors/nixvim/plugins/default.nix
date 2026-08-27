@@ -13,6 +13,7 @@
     ./lualine.nix
     ./mini
     ./noice.nix
+    ./persistence.nix
     ./snacks
     ./todo-comments.nix
     ./treesitter

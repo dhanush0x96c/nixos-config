@@ -28,7 +28,12 @@
         desc = "Recent Files";
         action = ":lua Snacks.dashboard.pick('oldfiles')";
       }
-      # TODO: Enable persistence.nvim plugin for session management and add the restore session option to the dashboard
+      {
+        icon = " ";
+        key = "s";
+        desc = "Restore Session";
+        action = ":lua require('persistence').load()";
+      }
       {
         icon = " ";
         key = "q";
