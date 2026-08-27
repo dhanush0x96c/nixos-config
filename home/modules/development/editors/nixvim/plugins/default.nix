@@ -17,6 +17,7 @@
     ./todo-comments.nix
     ./treesitter
     ./trouble.nix
+    ./ts-comments.nix
     ./web-devicons.nix
     ./which-key.nix
   ];
