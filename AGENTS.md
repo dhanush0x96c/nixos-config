@@ -100,10 +100,10 @@ This repository manages the system and user configurations for the host **`tesse
   - Redirect `stderr` (`2>/dev/null`) to suppress `troff` layout warnings:
     ```bash
     # List all option declarations under a module namespace:
-    MANPAGER=cat man home-configuration.nix 2>/dev/null | grep -E '^\s+programs\.ghostty\.'
+    MANPAGER=cat man home-configuration.nix 2>/dev/null | rg '^\s+programs\.ghostty\.'
 
     # Inspect a specific option with its type, default, and examples:
-    MANPAGER=cat man home-configuration.nix 2>/dev/null | grep -A 25 'programs\.ghostty\.settings'
+    MANPAGER=cat man home-configuration.nix 2>/dev/null | rg -A 25 'programs\.ghostty\.settings'
     ```
 
 ---
@@ -137,6 +137,17 @@ This repository manages the system and user configurations for the host **`tesse
 7. **Finding Configuration Options**:
    - **Never use `nix eval` for option discovery**: Do not run `nix eval` to inspect or discover Home Manager or NixOS options, as it is slow and resource-heavy.
    - **Use the manual pages**: Always look up Home Manager module options via `man home-configuration.nix 2>/dev/null` and NixOS system options via `man configuration.nix 2>/dev/null`.
+
+8. **Modern CLI Tool Usage (Prefer Installed Modern Replacements)**:
+   - When executing commands, discovering files, analyzing content, or inspecting code, agents **must always prioritize modern CLI tools** installed in the environment over legacy GNU/Unix utilities.
+   - Specifically, use the following installed tools:
+     - **`ripgrep` (`rg`)** in place of `grep`, `egrep`, or `fgrep` (for fast recursive search and regex pattern matching).
+     - **`fd`** in place of `find` (for fast file and directory discovery).
+     - **`bat`** in place of `cat` or `less` (for syntax highlighting and file viewing).
+     - **`eza`** in place of `ls` and `tree` (for directory listings and tree inspection, e.g. `eza -la`, `eza --tree`).
+     - **`jq`** for parsing and manipulating JSON data in command pipelines.
+     - **`delta`** in place of raw `diff` (for syntax-highlighted diff viewing).
+     - **`tldr`** alongside `man` (for quick command syntax cheat sheets and practical examples).
 
 ---
 
