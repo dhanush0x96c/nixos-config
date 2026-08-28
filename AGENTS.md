@@ -64,7 +64,7 @@ This repository manages the system and user configurations for the host **`tesse
         ├── compatibility.nix  # Compatibility layers for applications
         ├── development/       # Development setups, compilers, and IDEs
         │   ├── agents/        # AI developer agents (antigravity-cli, copilot, codex, opencode)
-        │   ├── editors/       # Editor setups (neovim/LazyVim, vscode, zed)
+        │   ├── editors/       # Editor setups (neovim/LazyVim, nixvim, vscode, zed)
         │   ├── default.nix    # Imports dev tools and defines system programming language tools (ffmpeg, python)
         │   ├── go.nix         # Go compiler / toolchain setup
         │   └── uv.nix         # Python uv packager setup
@@ -96,6 +96,7 @@ This repository manages the system and user configurations for the host **`tesse
 
 - **Home Manager Options**: Use `man home-configuration.nix` rather than evaluating Nix expressions (`nix eval`).
 - **NixOS System Options**: Use `man configuration.nix`.
+- **Nixvim Options**: Inspect plugin options directly in Nixvim module definitions in the Nix store (e.g. `/nix/store/*source/plugins/by-name/<plugin-name>/default.nix`, located via `fd "<plugin-name>" /nix/store/`) or Nixvim documentation.
 - **Tips for Clean & Fast Searches**:
   - Redirect `stderr` (`2>/dev/null`) to suppress `troff` layout warnings:
     ```bash
@@ -148,6 +149,26 @@ This repository manages the system and user configurations for the host **`tesse
      - **`jq`** for parsing and manipulating JSON data in command pipelines.
      - **`delta`** in place of raw `diff` (for syntax-highlighted diff viewing).
      - **`tldr`** alongside `man` (for quick command syntax cheat sheets and practical examples).
+
+9. **Nixvim Plugin Configuration**:
+   - Nixvim configuration is modularized under [home/modules/development/editors/nixvim/](home/modules/development/editors/nixvim/).
+   - Place individual plugin modules in dedicated files under [home/modules/development/editors/nixvim/plugins/<plugin-name>.nix](home/modules/development/editors/nixvim/plugins/) (or subdirectories like `languages/`, `lsp/`, `mini/`, `snacks/`, `treesitter/` when domain-specific).
+   - Standard plugin format:
+     ```nix
+     _:
+
+     {
+       plugins.<plugin-name> = {
+         enable = true;
+         # settings = { ... };
+       };
+
+       # Optional keymaps
+       # keymaps = [ ... ];
+     }
+     ```
+   - Always import newly created plugin files in [home/modules/development/editors/nixvim/plugins/default.nix](home/modules/development/editors/nixvim/plugins/default.nix), maintaining alphabetical order.
+   - For option discovery and definitions, check the Nix store Nixvim module source under `/nix/store/*source/plugins/by-name/<plugin-name>/default.nix`.
 
 ---
 
