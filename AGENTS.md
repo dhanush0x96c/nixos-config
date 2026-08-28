@@ -92,6 +92,26 @@ This repository manages the system and user configurations for the host **`tesse
 - Every changed file must be formatted using the appropriate formatter for its file type (not just Nix files).
 - Formatter tools can be executed on-demand via `nix run` (e.g., `nix run nixpkgs#nixfmt-rfc-style -- <file>`, `nix run nixpkgs#stylua -- <file>`).
 
+### Discovering Configuration Options & Reading Documentation
+
+This workflow applies when discovering configuration options or reading documentation—**specifically for NixOS system options, Home Manager user options, and Nixvim plugin options, but is NOT limited to these** and applies universally to **every application, CLI utility, daemon, GUI tool, and service** across the entire system and user configurations:
+
+1. **Always Clone First**: When looking for options or documentation for an application, framework, or module that hasn't been cloned yet (e.g. NixOS/nixpkgs, Home Manager, Nixvim, or any standalone application repo), always attempt to clone the upstream documentation or source repository first to a stable location (e.g. `~/.cache/docs/<repo-name>`) and search inside it locally using `rg` and `fd`.
+2. **Web Search Fallback**: Only if documentation or options are not available as a cloneable repository should you fall back to web search.
+3. **Never Run `nix eval`**: Never run local evaluation commands such as `nix eval` to figure out configuration options.
+4. **Prioritize Speed without Guessing**: Prioritize speed, but never guess option names, types, syntax, or default values—always verify against documentation or source definitions.
+5. **Track Cloned Repositories**: Every cloned repository must be recorded in [Cloned Documentation Repositories](#-cloned-documentation-repositories) below to prevent duplicate clones.
+
+---
+
+## 📚 Cloned Documentation Repositories
+
+Repositories cloned for documentation and option discovery must be listed here to avoid duplicate clones across agent sessions:
+
+| Repository | Stable Path | Purpose |
+| ---------- | ----------- | ------- |
+| *(None currently registered)* | | |
+
 ---
 
 ## 📐 Guidelines for AI Agents
@@ -120,7 +140,15 @@ This repository manages the system and user configurations for the host **`tesse
 6. **Nixos Rebuild Operations**:
    - **Never use `nixos-rebuild`**: Do not run the `nixos-rebuild` command (including `nixos-rebuild switch` or `nixos-rebuild build`) under any circumstances. Testing, building, and applying the system configuration is the user's responsibility.
 
-7. **Modern CLI Tool Usage (Prefer Installed Modern Replacements)**:
+7. **Discovering Configuration Options & Reading Documentation**:
+   - **Scope (NixOS, Home Manager, Nixvim & Beyond)**: Specifically applies when looking up configuration options for **NixOS**, **Home Manager**, and **Nixvim**, but is **not limited to these**—it governs every application, daemon, CLI utility, window manager component, editor plugin, or service configured across the repository.
+   - **Always Clone First**: When looking for options or documentation for an uncloned component, agents must always attempt to clone the upstream documentation or source repository first to a stable location (e.g. `~/.cache/docs/<repo-name>`) and search inside it locally using `rg` and `fd`.
+   - **Web Search Fallback**: If the docs are not available as a repository, use web search.
+   - **Avoid Duplicate Clones**: Check existing entries first and document any newly cloned repository in [Cloned Documentation Repositories](#-cloned-documentation-repositories).
+   - **Never Run `nix eval`**: Never run local commands like `nix eval` to discover options.
+   - **Prioritize Speed without Guessing**: Move quickly, but never guess options or configuration syntax.
+
+8. **Modern CLI Tool Usage (Prefer Installed Modern Replacements)**:
    - When executing commands, discovering files, analyzing content, or inspecting code, agents **must always prioritize modern CLI tools** installed in the environment over legacy GNU/Unix utilities.
    - Specifically, use the following installed tools:
      - **`ripgrep` (`rg`)** in place of `grep`, `egrep`, or `fgrep` (for fast recursive search and regex pattern matching).
@@ -131,7 +159,7 @@ This repository manages the system and user configurations for the host **`tesse
      - **`delta`** in place of raw `diff` (for syntax-highlighted diff viewing).
      - **`tldr`** alongside `man` (for quick command syntax cheat sheets and practical examples).
 
-8. **Nixvim Plugin Configuration**:
+9. **Nixvim Plugin Configuration**:
    - Nixvim configuration is modularized under [home/modules/development/editors/nixvim/](home/modules/development/editors/nixvim/).
    - Place individual plugin modules in dedicated files under [home/modules/development/editors/nixvim/plugins/<plugin-name>.nix](home/modules/development/editors/nixvim/plugins/) (or subdirectories like `languages/`, `lsp/`, `mini/`, `snacks/`, `treesitter/` when domain-specific).
    - Standard plugin format:
