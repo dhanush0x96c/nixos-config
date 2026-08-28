@@ -64,7 +64,7 @@ This repository manages the system and user configurations for the host **`tesse
         ├── compatibility.nix  # Compatibility layers for applications
         ├── development/       # Development setups, compilers, and IDEs
         │   ├── agents/        # AI developer agents (antigravity-cli, copilot, codex, opencode)
-        │   ├── editors/       # Editor setups (neovim/LazyVim, nixvim, vscode, zed)
+        │   ├── editors/       # Editor setups (nixvim, vscode, zed)
         │   ├── default.nix    # Imports dev tools and defines system programming language tools (ffmpeg, python)
         │   ├── go.nix         # Go compiler / toolchain setup
         │   └── uv.nix         # Python uv packager setup
