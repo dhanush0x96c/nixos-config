@@ -7,6 +7,11 @@ _:
     "zen.tab-bar.expanded" = false;
     "zen.tabs.vertical.expand-on-hover" = true;
 
+    # Extension Updates & Notifications
+    "extensions.update.enabled" = false;
+    "extensions.update.autoUpdateDefault" = false;
+    "extensions.update.notifyUser" = false;
+
     # Password Manager & Autofill
     "signon.rememberSignons" = false;
     "signon.autofillForms" = false;
