@@ -111,6 +111,7 @@ Repositories cloned for documentation and option discovery must be listed here t
 | Repository | Stable Path | Purpose |
 | ---------- | ----------- | ------- |
 | `nix-community/home-manager` | `~/.cache/docs/home-manager` | Home Manager options and module definitions |
+| `nix-community/nixvim` | `~/.cache/docs/nixvim` | Nixvim options and module definitions |
 
 ---
 
