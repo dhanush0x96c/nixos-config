@@ -27,6 +27,14 @@ _:
           group = "hunks";
         }
         {
+          __unkeyed-1 = "<leader>o";
+          group = "obsidian";
+          icon = {
+            icon = "󱓧 ";
+            color = "purple";
+          };
+        }
+        {
           __unkeyed-1 = "<leader>q";
           group = "quit/session";
         }
