@@ -110,7 +110,7 @@ Repositories cloned for documentation and option discovery must be listed here t
 
 | Repository | Stable Path | Purpose |
 | ---------- | ----------- | ------- |
-| *(None currently registered)* | | |
+| `nix-community/home-manager` | `~/.cache/docs/home-manager` | Home Manager options and module definitions |
 
 ---
 
