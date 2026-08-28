@@ -47,7 +47,11 @@
 
         if [ -d "$NOTES_DIR" ]; then
           echo "Syncing Notes to Google Drive..."
-          ${pkgs.rclone}/bin/rclone sync "$NOTES_DIR" "gdrive:Notes"
+          ${pkgs.rclone}/bin/rclone sync "$NOTES_DIR" "gdrive:Notes" \
+            --exclude ".git/**" \
+            --exclude ".gitignore" \
+            --exclude ".jj/**" \
+            --exclude ".obsidian/**"
         fi
       ''}";
     };
