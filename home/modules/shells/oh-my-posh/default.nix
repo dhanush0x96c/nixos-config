@@ -9,6 +9,7 @@ in
     enable = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
+    enableNushellIntegration = true;
     settings = {
       version = 4;
       final_space = true;

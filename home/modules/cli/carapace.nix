@@ -1,9 +1,9 @@
 _:
 
 {
-  programs.fzf = {
+  programs.carapace = {
     enable = true;
-    enableZshIntegration = true;
     enableNushellIntegration = true;
+    enableZshIntegration = false;
   };
 }

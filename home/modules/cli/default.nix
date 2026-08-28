@@ -3,6 +3,7 @@
 {
   imports = [
     ./bat.nix
+    ./carapace.nix
     ./eza.nix
     ./fd.nix
     ./fzf.nix
