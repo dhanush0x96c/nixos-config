@@ -87,25 +87,10 @@ This repository manages the system and user configurations for the host **`tesse
 
 ## 🛠️ Essential Commands & Workflows
 
-### 1. Formatting Code
+### Formatting Code
 
 - Every changed file must be formatted using the appropriate formatter for its file type (not just Nix files).
 - Formatter tools can be executed on-demand via `nix run` (e.g., `nix run nixpkgs#nixfmt-rfc-style -- <file>`, `nix run nixpkgs#stylua -- <file>`).
-
-### 2. Inspecting Configuration Options
-
-- **Home Manager Options**: Use `man home-configuration.nix` rather than evaluating Nix expressions (`nix eval`).
-- **NixOS System Options**: Use `man configuration.nix`.
-- **Nixvim Options**: Inspect plugin options directly in Nixvim module definitions in the Nix store (e.g. `/nix/store/*source/plugins/by-name/<plugin-name>/default.nix`, located via `fd "<plugin-name>" /nix/store/`) or Nixvim documentation.
-- **Tips for Clean & Fast Searches**:
-  - Redirect `stderr` (`2>/dev/null`) to suppress `troff` layout warnings:
-    ```bash
-    # List all option declarations under a module namespace:
-    MANPAGER=cat man home-configuration.nix 2>/dev/null | rg '^\s+programs\.ghostty\.'
-
-    # Inspect a specific option with its type, default, and examples:
-    MANPAGER=cat man home-configuration.nix 2>/dev/null | rg -A 25 'programs\.ghostty\.settings'
-    ```
 
 ---
 
@@ -135,11 +120,7 @@ This repository manages the system and user configurations for the host **`tesse
 6. **Nixos Rebuild Operations**:
    - **Never use `nixos-rebuild`**: Do not run the `nixos-rebuild` command (including `nixos-rebuild switch` or `nixos-rebuild build`) under any circumstances. Testing, building, and applying the system configuration is the user's responsibility.
 
-7. **Finding Configuration Options**:
-   - **Never use `nix eval` for option discovery**: Do not run `nix eval` to inspect or discover Home Manager or NixOS options, as it is slow and resource-heavy.
-   - **Use the manual pages**: Always look up Home Manager module options via `man home-configuration.nix 2>/dev/null` and NixOS system options via `man configuration.nix 2>/dev/null`.
-
-8. **Modern CLI Tool Usage (Prefer Installed Modern Replacements)**:
+7. **Modern CLI Tool Usage (Prefer Installed Modern Replacements)**:
    - When executing commands, discovering files, analyzing content, or inspecting code, agents **must always prioritize modern CLI tools** installed in the environment over legacy GNU/Unix utilities.
    - Specifically, use the following installed tools:
      - **`ripgrep` (`rg`)** in place of `grep`, `egrep`, or `fgrep` (for fast recursive search and regex pattern matching).
@@ -150,7 +131,7 @@ This repository manages the system and user configurations for the host **`tesse
      - **`delta`** in place of raw `diff` (for syntax-highlighted diff viewing).
      - **`tldr`** alongside `man` (for quick command syntax cheat sheets and practical examples).
 
-9. **Nixvim Plugin Configuration**:
+8. **Nixvim Plugin Configuration**:
    - Nixvim configuration is modularized under [home/modules/development/editors/nixvim/](home/modules/development/editors/nixvim/).
    - Place individual plugin modules in dedicated files under [home/modules/development/editors/nixvim/plugins/<plugin-name>.nix](home/modules/development/editors/nixvim/plugins/) (or subdirectories like `languages/`, `lsp/`, `mini/`, `snacks/`, `treesitter/` when domain-specific).
    - Standard plugin format:
@@ -168,7 +149,6 @@ This repository manages the system and user configurations for the host **`tesse
      }
      ```
    - Always import newly created plugin files in [home/modules/development/editors/nixvim/plugins/default.nix](home/modules/development/editors/nixvim/plugins/default.nix), maintaining alphabetical order.
-   - For option discovery and definitions, check the Nix store Nixvim module source under `/nix/store/*source/plugins/by-name/<plugin-name>/default.nix`.
 
 ---
 
