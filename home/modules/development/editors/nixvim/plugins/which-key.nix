@@ -27,6 +27,14 @@ _:
           group = "hunks";
         }
         {
+          __unkeyed-1 = "<leader>l";
+          group = "leetcode";
+          icon = {
+            icon = "󰞋 ";
+            color = "yellow";
+          };
+        }
+        {
           __unkeyed-1 = "<leader>o";
           group = "obsidian";
           icon = {

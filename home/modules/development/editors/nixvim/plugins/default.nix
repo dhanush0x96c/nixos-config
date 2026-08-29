@@ -8,6 +8,7 @@
     ./flash.nix
     ./gitsigns.nix
     ./languages
+    ./leetcode.nix
     ./lint.nix
     ./lsp
     ./lualine.nix
