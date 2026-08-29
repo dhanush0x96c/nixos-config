@@ -89,8 +89,8 @@ This repository manages the system and user configurations for the host **`tesse
 
 ### Formatting Code
 
-- Every changed file must be formatted using the appropriate formatter for its file type (not just Nix files).
-- Formatter tools can be executed on-demand via `nix run` (e.g., `nix run nixpkgs#nixfmt-rfc-style -- <file>`, `nix run nixpkgs#stylua -- <file>`).
+- Every changed file must be formatted using the appropriate formatter for its file type (not just Nix files, including Markdown files like `AGENTS.md`).
+- Formatter tools must always be executed on-demand via `nix run` (e.g., `nix run nixpkgs#nixfmt-rfc-style -- <file>`, `nix run nixpkgs#prettier -- --write <file>`, `nix run nixpkgs#stylua -- <file>`).
 
 ### Discovering Configuration Options & Reading Documentation
 
@@ -108,12 +108,12 @@ This workflow applies when discovering configuration options or reading document
 
 Repositories cloned for documentation and option discovery must be listed here to avoid duplicate clones across agent sessions:
 
-| Repository | Stable Path | Purpose |
-| ---------- | ----------- | ------- |
-| `LazyVim/LazyVim` | `~/.cache/docs/LazyVim` | LazyVim extra plugins and defaults |
-| `kawre/leetcode.nvim` | `~/.cache/docs/leetcode.nvim` | Leetcode Neovim plugin documentation |
-| `nix-community/home-manager` | `~/.cache/docs/home-manager` | Home Manager options and module definitions |
-| `nix-community/nixvim` | `~/.cache/docs/nixvim` | Nixvim options and module definitions |
+| Repository                   | Stable Path                   | Purpose                                     |
+| ---------------------------- | ----------------------------- | ------------------------------------------- |
+| `LazyVim/LazyVim`            | `~/.cache/docs/LazyVim`       | LazyVim extra plugins and defaults          |
+| `kawre/leetcode.nvim`        | `~/.cache/docs/leetcode.nvim` | Leetcode Neovim plugin documentation        |
+| `nix-community/home-manager` | `~/.cache/docs/home-manager`  | Home Manager options and module definitions |
+| `nix-community/nixvim`       | `~/.cache/docs/nixvim`        | Nixvim options and module definitions       |
 
 ---
 
@@ -166,6 +166,7 @@ Repositories cloned for documentation and option discovery must be listed here t
    - Nixvim configuration is modularized under [home/modules/development/editors/nixvim/](home/modules/development/editors/nixvim/).
    - Place individual plugin modules in dedicated files under [home/modules/development/editors/nixvim/plugins/<plugin-name>.nix](home/modules/development/editors/nixvim/plugins/) (or subdirectories like `languages/`, `lsp/`, `mini/`, `snacks/`, `treesitter/` when domain-specific).
    - Standard plugin format:
+
      ```nix
      _:
 
@@ -179,6 +180,7 @@ Repositories cloned for documentation and option discovery must be listed here t
        # keymaps = [ ... ];
      }
      ```
+
    - Always import newly created plugin files in [home/modules/development/editors/nixvim/plugins/default.nix](home/modules/development/editors/nixvim/plugins/default.nix), maintaining alphabetical order.
 
 ---
