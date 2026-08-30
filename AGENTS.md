@@ -114,6 +114,7 @@ Repositories cloned for documentation and option discovery must be listed here t
 | `kawre/leetcode.nvim`        | `~/.cache/docs/leetcode.nvim` | Leetcode Neovim plugin documentation        |
 | `nix-community/home-manager` | `~/.cache/docs/home-manager`  | Home Manager options and module definitions |
 | `nix-community/nixvim`       | `~/.cache/docs/nixvim`        | Nixvim options and module definitions       |
+| `ogulcancelik/herdr`         | `~/.cache/docs/herdr`         | Herdr terminal multiplexer documentation    |
 
 ---
 

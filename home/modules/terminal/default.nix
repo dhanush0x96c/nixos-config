@@ -3,6 +3,7 @@
 {
   imports = [
     ./ghostty.nix
+    ./herdr.nix
     ./kitty.nix
     ./tmux.nix
   ];
