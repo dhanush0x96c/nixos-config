@@ -63,7 +63,7 @@ This repository manages the system and user configurations for the host **`tesse
         │   └── default.nix    # Imports CLI configs and defines general packages (duf, dust, fx, tldr, unzip)
         ├── compatibility.nix  # Compatibility layers for applications
         ├── development/       # Development setups, compilers, and IDEs
-        │   ├── agents/        # AI developer agents (antigravity-cli, copilot, codex, opencode)
+        │   ├── agents/        # AI developer agents (antigravity-cli, claude-code, codex, copilot, opencode)
         │   ├── editors/       # Editor setups (nixvim, vscode, zed)
         │   ├── default.nix    # Imports dev tools and defines system programming language tools (ffmpeg, python)
         │   ├── go.nix         # Go compiler / toolchain setup
