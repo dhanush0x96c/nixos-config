@@ -4,6 +4,7 @@
   imports = [
     ./agents
     ./editors
+    ./gcc.nix
     ./go.nix
     ./uv.nix
   ];
