@@ -59,7 +59,7 @@ This repository manages the system and user configurations for the host **`tesse
     │   ├── default.nix        # Primary user Home Manager entry point (imports modules)
     │   └── home.nix           # Core home manager settings (username, homeDirectory, stateVersion)
     └── modules/               # Modular user program, terminal, and shell configurations
-        ├── cli/               # CLI utility configs (bat, eza, fd, fzf, gpg, jq, pass, ripgrep, zoxide)
+        ├── cli/               # CLI utility configs (bat, carapace, direnv, eza, fd, fzf, gpg, jq, pass, ripgrep, zoxide)
         │   └── default.nix    # Imports CLI configs and defines general packages (duf, dust, fx, tldr, unzip)
         ├── compatibility.nix  # Compatibility layers for applications
         ├── development/       # Development setups, compilers, and IDEs

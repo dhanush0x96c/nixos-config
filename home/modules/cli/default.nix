@@ -4,6 +4,7 @@
   imports = [
     ./bat.nix
     ./carapace.nix
+    ./direnv.nix
     ./eza.nix
     ./fd.nix
     ./fzf.nix
