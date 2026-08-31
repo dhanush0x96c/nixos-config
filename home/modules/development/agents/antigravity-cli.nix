@@ -5,6 +5,11 @@ _:
     enable = true;
     skills = import ./skills;
 
+    settings = {
+      colorScheme = "tokyo night";
+      notifications = true;
+    };
+
     permissions = {
       allow = [
         # Common read and search commands
