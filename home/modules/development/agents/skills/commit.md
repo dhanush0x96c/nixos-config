@@ -6,7 +6,7 @@ description: Create formatted conventional commits.
 # Commit Workflow
 
 1. **Format changed files**:
-   - Run formatters on all modified files via `nix run` before committing (e.g. `nix run nixpkgs#ruff -- format <files>`, `nix run nixpkgs#prettier -- --write <files>`).
+   - Formatter tools must **always** be executed on-demand via `nix run` (never invoke formatter binaries directly or globally). Format all modified files before committing (e.g. `nix run nixpkgs#nixfmt-rfc-style -- <files>`, `nix run nixpkgs#ruff -- format <files>`, `nix run nixpkgs#gofmt -- -w <files>`, `nix run nixpkgs#prettier -- --write <files>`).
 
 2. **Inspect VCS state**:
    - Detect VCS: Use `jj` if in a Jujutsu repository (`.jj`), otherwise use `git`.

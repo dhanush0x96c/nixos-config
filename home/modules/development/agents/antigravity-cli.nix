@@ -20,6 +20,13 @@ _:
         "command(ls)"
         "command(rg)"
 
+        # Formatting commands
+        "command(nix run nixpkgs#gofmt)"
+        "command(nix run nixpkgs#nixfmt)"
+        "command(nix run nixpkgs#nixfmt-rfc-style)"
+        "command(nix run nixpkgs#prettier)"
+        "command(nix run nixpkgs#ruff)"
+
         # Git read commands
         "command(git branch)"
         "command(git diff)"
@@ -37,4 +44,6 @@ _:
       ];
     };
   };
+
+  home.file.".gemini/antigravity-cli/settings.json".force = true;
 }
