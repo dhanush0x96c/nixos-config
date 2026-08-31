@@ -4,8 +4,8 @@ _:
   colorschemes.tokyonight = {
     enable = true;
     settings = {
-      style = "moon";
-      transparent = true;
+      style = "night";
+      transparent = false;
     };
   };
 }
