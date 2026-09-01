@@ -41,6 +41,9 @@ _:
         "command(jj root)"
         "command(jj show)"
         "command(jj status)"
+
+        # Just commands
+        "command(just)"
       ];
     };
   };
