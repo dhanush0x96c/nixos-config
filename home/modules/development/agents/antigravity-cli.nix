@@ -1,4 +1,4 @@
-_:
+{ config, ... }:
 
 {
   programs.antigravity-cli = {
@@ -12,6 +12,9 @@ _:
 
     permissions = {
       allow = [
+        # Cached documentation
+        "read_file(${config.home.homeDirectory}/.cache/docs)"
+
         # Common read and search commands
         "command(cat)"
         "command(fd)"
