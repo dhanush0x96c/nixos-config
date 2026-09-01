@@ -19,6 +19,7 @@
     duf
     dust
     fx
+    just
     tldr
     unzip
   ];
