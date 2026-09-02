@@ -9,6 +9,7 @@
     gopls
     gotools
     impl
+    revive
   ];
 
   plugins = {
@@ -77,7 +78,10 @@
       "gofumpt"
     ];
 
-    lint.lintersByFt.go = [ "golangcilint" ];
+    lint.lintersByFt.go = [
+      "golangcilint"
+      "revive"
+    ];
 
     mini.modules.icons = {
       file = {
