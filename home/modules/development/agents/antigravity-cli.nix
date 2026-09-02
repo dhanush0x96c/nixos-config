@@ -24,6 +24,7 @@
         "command(rg)"
 
         # Formatting commands
+        "command(nix run nixpkgs#go -- fmt)"
         "command(nix run nixpkgs#gofmt)"
         "command(nix run nixpkgs#nixfmt)"
         "command(nix run nixpkgs#nixfmt-rfc-style)"
