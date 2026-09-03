@@ -111,7 +111,9 @@ Repositories cloned for documentation and option discovery must be listed here t
 | Repository                   | Stable Path                   | Purpose                                     |
 | ---------------------------- | ----------------------------- | ------------------------------------------- |
 | `LazyVim/LazyVim`            | `~/.cache/docs/LazyVim`       | LazyVim extra plugins and defaults          |
+| `golangci/golangci-lint`     | `~/.cache/docs/golangci-lint` | Golangci-lint documentation and linters     |
 | `kawre/leetcode.nvim`        | `~/.cache/docs/leetcode.nvim` | Leetcode Neovim plugin documentation        |
+| `mgechev/revive`             | `~/.cache/docs/revive`        | Revive Go linter documentation and rules    |
 | `nix-community/home-manager` | `~/.cache/docs/home-manager`  | Home Manager options and module definitions |
 | `nix-community/nixvim`       | `~/.cache/docs/nixvim`        | Nixvim options and module definitions       |
 | `ogulcancelik/herdr`         | `~/.cache/docs/herdr`         | Herdr terminal multiplexer documentation    |

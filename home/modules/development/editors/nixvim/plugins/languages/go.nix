@@ -9,7 +9,6 @@
     gopls
     gotools
     impl
-    revive
   ];
 
   plugins = {
@@ -80,7 +79,6 @@
 
     lint.lintersByFt.go = [
       "golangcilint"
-      "revive"
     ];
 
     mini.modules.icons = {
@@ -98,4 +96,13 @@
       };
     };
   };
+
+  extraConfigLua = ''
+    local lint = require("lint")
+    if lint.linters.golangcilint and lint.linters.golangcilint.args then
+      if not vim.tbl_contains(lint.linters.golangcilint.args, "--enable=revive") then
+        table.insert(lint.linters.golangcilint.args, 2, "--enable=revive")
+      end
+    end
+  '';
 }
