@@ -65,6 +65,18 @@ _:
     }
     {
       mode = "n";
+      key = "<leader>gd";
+      action.__raw = "function() Snacks.picker.git_diff() end";
+      options.desc = "Git Diff (Hunks)";
+    }
+    {
+      mode = "n";
+      key = "<leader>gs";
+      action.__raw = "function() Snacks.picker.git_status() end";
+      options.desc = "Git Status";
+    }
+    {
+      mode = "n";
       key = "<leader>gi";
       action.__raw = "function() Snacks.picker.gh_issue() end";
       options.desc = "GitHub Issues";
