@@ -111,6 +111,8 @@ Repositories cloned for documentation and option discovery must be listed here t
 | Repository                   | Stable Path                   | Purpose                                     |
 | ---------------------------- | ----------------------------- | ------------------------------------------- |
 | `LazyVim/LazyVim`            | `~/.cache/docs/LazyVim`       | LazyVim extra plugins and defaults          |
+| `danth/stylix`               | `~/.cache/docs/stylix`        | Stylix theme options and module definitions |
+| `exec64/imv`                 | `~/.cache/docs/imv`           | imv documentation and source repository     |
 | `golangci/golangci-lint`     | `~/.cache/docs/golangci-lint` | Golangci-lint documentation and linters     |
 | `kawre/leetcode.nvim`        | `~/.cache/docs/leetcode.nvim` | Leetcode Neovim plugin documentation        |
 | `mgechev/revive`             | `~/.cache/docs/revive`        | Revive Go linter documentation and rules    |
