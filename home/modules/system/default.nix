@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./bluetooth.nix
+    ./bluetooth
     ./btop.nix
     ./clipboard.nix
     ./network-manager-applet.nix

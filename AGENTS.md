@@ -78,6 +78,7 @@ This repository manages the system and user configurations for the host **`tesse
         ├── programs/          # Application configs (firefox, keepassxc, mpv, rclone, zen-browser)
         ├── shells/            # Shell configurations (bash, zsh with plugins/aliases, oh-my-posh prompt)
         ├── system/            # System tools (bluetooth helper, btop, clipboard, applets, podman, rebuild helper, yazi)
+        │   ├── bluetooth/     # Bluetooth helper and connect script (bluetooth-connect-last.sh)
         │   └── rebuild/       # NixOS rebuild status script/helper (rebuild.sh)
         ├── terminal/          # Terminal emulators (kitty, tmux)
         └── vcs/               # Version control systems (git, jujutsu, jjui, lazygit, gh, delta)
