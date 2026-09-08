@@ -13,5 +13,6 @@
     ../modules/system
     ../modules/vcs
     ../modules/programs
+    ../modules/scripts
   ];
 }

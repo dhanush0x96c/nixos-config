@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  imports = [
+    ./duration.nix
+  ];
+}

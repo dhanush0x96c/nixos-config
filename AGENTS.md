@@ -76,6 +76,7 @@ This repository manages the system and user configurations for the host **`tesse
         │   ├── hyprlock.nix   # Lock screen setup
         │   └── mako.nix       # Notification daemon configuration
         ├── programs/          # Application configs (firefox, keepassxc, mpv, rclone, zen-browser)
+        ├── scripts/           # User scripts and utility commands (duration)
         ├── shells/            # Shell configurations (bash, zsh with plugins/aliases, oh-my-posh prompt)
         ├── system/            # System tools (bluetooth helper, btop, clipboard, applets, podman, rebuild helper, yazi)
         │   ├── bluetooth/     # Bluetooth helper and connect script (bluetooth-connect-last.sh)
