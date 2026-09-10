@@ -84,10 +84,6 @@ _:
           group = "goto";
         }
         {
-          __unkeyed-1 = "gs";
-          group = "surround";
-        }
-        {
           __unkeyed-1 = "z";
           group = "fold";
         }
