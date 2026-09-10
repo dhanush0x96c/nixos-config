@@ -1,5 +1,12 @@
 { pkgs, ... }:
 
+let
+  markdownlintConfig = pkgs.writeText "markdownlint.json" (
+    builtins.toJSON {
+      MD013 = false;
+    }
+  );
+in
 {
   filetype.extension.mdx = "markdown.mdx";
 
@@ -22,14 +29,20 @@
             end
           end
         '';
-        markdownlint-cli2.condition.__raw = ''
-          function(_, ctx)
-            local diag = vim.tbl_filter(function(d)
-              return d.source == "markdownlint"
-            end, vim.diagnostic.get(ctx.buf))
-            return #diag > 0
-          end
-        '';
+        markdownlint-cli2 = {
+          prepend_args = [
+            "--config"
+            "${markdownlintConfig}"
+          ];
+          condition.__raw = ''
+            function(_, ctx)
+              local diag = vim.tbl_filter(function(d)
+                return d.source == "markdownlint"
+              end, vim.diagnostic.get(ctx.buf))
+              return #diag > 0
+            end
+          '';
+        };
       };
 
       formatters_by_ft = {
@@ -46,7 +59,14 @@
       };
     };
 
-    lint.lintersByFt.markdown = [ "markdownlint-cli2" ];
+    lint = {
+      lintersByFt.markdown = [ "markdownlint-cli2" ];
+      linters."markdownlint-cli2".args = [
+        "--config"
+        "${markdownlintConfig}"
+        "-"
+      ];
+    };
 
     lsp.servers.marksman.enable = true;
 
