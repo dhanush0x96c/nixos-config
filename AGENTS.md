@@ -112,6 +112,7 @@ Repositories cloned for documentation and option discovery must be listed here t
 
 | Repository                   | Stable Path                   | Purpose                                     |
 | ---------------------------- | ----------------------------- | ------------------------------------------- |
+| `Alexays/Waybar`             | `~/.cache/docs/Waybar`        | Waybar documentation and source repository  |
 | `LazyVim/LazyVim`            | `~/.cache/docs/LazyVim`       | LazyVim extra plugins and defaults          |
 | `danth/stylix`               | `~/.cache/docs/stylix`        | Stylix theme options and module definitions |
 | `exec64/imv`                 | `~/.cache/docs/imv`           | imv documentation and source repository     |

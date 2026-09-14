@@ -6,29 +6,27 @@
   "margin-top": 6,
   "margin-left": 8,
   "margin-right": 8,
-"modules-left": [
-  "hyprland/workspaces",
-  "hyprland/submap",
-  "custom/media",
-  "cpu",
-  "memory",
-  "temperature",
-],
-"modules-center": [
-  "clock"
-],
-"modules-right": [
-  "backlight",
-  "wireplumber",
-  "network",
-  "bluetooth",
-  "battery",
-  "custom/nixos-rebuild",
-  "idle_inhibitor",
-  "tray",
-  "custom/hyprlock",
-  "custom/power"
-],
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/submap",
+    "custom/media",
+    "cpu",
+    "memory",
+    "temperature"
+  ],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "backlight",
+    "wireplumber",
+    "network",
+    "bluetooth",
+    "battery",
+    "custom/nixos-rebuild",
+    "idle_inhibitor",
+    "tray",
+    "custom/hyprlock",
+    "custom/power"
+  ],
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
@@ -69,7 +67,7 @@
   },
   "clock": {
     "format": "󰅐 {:%H:%M}",
-    "format-alt": "󰃭 {:%Y-%m-%d %H:%M:%S}",
+    "format-alt": "󰃭 {0:%a • %d %b %Y} • 󰅐 {0:%H:%M:%S}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "interval": 1
   },
