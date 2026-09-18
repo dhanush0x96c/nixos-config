@@ -94,6 +94,22 @@ in
     };
   };
 
+  autoCmd = [
+    {
+      event = "FileType";
+      pattern = [
+        "markdown"
+        "markdown.mdx"
+      ];
+      callback.__raw = ''
+        function()
+          vim.opt_local.wrap = true
+          vim.opt_local.linebreak = true
+        end
+      '';
+    }
+  ];
+
   keymaps = [
     {
       mode = "n";
