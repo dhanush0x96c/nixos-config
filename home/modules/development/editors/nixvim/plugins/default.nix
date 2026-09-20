@@ -16,6 +16,7 @@
     ./noice.nix
     ./obsidian.nix
     ./persistence.nix
+    ./schemastore.nix
     ./snacks
     ./todo-comments.nix
     ./treesitter
