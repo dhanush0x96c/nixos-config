@@ -7,6 +7,8 @@ _:
     defaultKeymap = "emacs";
 
     initContent = ''
+      zle_highlight+=(paste:none)
+
       clear-screen() {
         zle .clear-screen
         if (( $+functions[omp_repaint_prompt] )); then
