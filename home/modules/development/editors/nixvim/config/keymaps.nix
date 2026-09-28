@@ -79,7 +79,31 @@ _:
       options.desc = "Save File";
     }
 
-    # Move lines in Visual mode
+    # Move lines
+    {
+      mode = "n";
+      key = "<A-j>";
+      action = "<cmd>m .+1<cr>==";
+      options.desc = "Move Down";
+    }
+    {
+      mode = "n";
+      key = "<A-k>";
+      action = "<cmd>m .-2<cr>==";
+      options.desc = "Move Up";
+    }
+    {
+      mode = "i";
+      key = "<A-j>";
+      action = "<esc><cmd>m .+1<cr>==gi";
+      options.desc = "Move Down";
+    }
+    {
+      mode = "i";
+      key = "<A-k>";
+      action = "<esc><cmd>m .-2<cr>==gi";
+      options.desc = "Move Up";
+    }
     {
       mode = "v";
       key = "<A-j>";
