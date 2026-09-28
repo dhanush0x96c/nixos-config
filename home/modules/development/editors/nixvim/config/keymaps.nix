@@ -83,13 +83,13 @@ _:
     {
       mode = "v";
       key = "<A-j>";
-      action = ":m '>+1<cr>gv=gv";
+      action = "<cmd>m '>+1<cr>gv=gv";
       options.desc = "Move Down";
     }
     {
       mode = "v";
       key = "<A-k>";
-      action = ":m '<-2<cr>gv=gv";
+      action = "<cmd>m '<-2<cr>gv=gv";
       options.desc = "Move Up";
     }
 
