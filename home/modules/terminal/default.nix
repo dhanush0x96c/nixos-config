@@ -5,7 +5,7 @@
     ./ghostty.nix
     ./herdr.nix
     ./kitty.nix
-    ./tmux.nix
+    ./zellij.nix
   ];
 
   options.my.terminal = {

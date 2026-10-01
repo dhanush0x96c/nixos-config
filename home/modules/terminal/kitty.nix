@@ -18,6 +18,7 @@
 
     settings = {
       background_opacity = "0.8";
+      shell = "zellij";
     };
 
     extraConfig = ''
