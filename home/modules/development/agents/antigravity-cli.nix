@@ -7,6 +7,7 @@
 
     settings = {
       colorScheme = "tokyo night";
+      model = "Gemini 3.1 Pro (High)";
       notifications = true;
     };
 
