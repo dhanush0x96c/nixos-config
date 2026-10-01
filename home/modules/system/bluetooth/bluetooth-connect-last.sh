@@ -20,5 +20,11 @@ notify-send -u normal "Bluetooth" "Connecting to $name..." -i network-bluetooth
 if bluetoothctl connect "$mac"; then
 	notify-send -u normal "Bluetooth" "Connected to $name" -i network-bluetooth
 else
-	notify-send -u critical "Bluetooth" "Failed to connect to $name" -i network-bluetooth
+	# Fallback for BlueZ first-attempt SDP timeout bug
+	sleep 1
+	if bluetoothctl connect "$mac"; then
+		notify-send -u normal "Bluetooth" "Connected to $name (on retry)" -i network-bluetooth
+	else
+		notify-send -u critical "Bluetooth" "Failed to connect to $name" -i network-bluetooth
+	fi
 fi
