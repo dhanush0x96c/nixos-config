@@ -391,8 +391,18 @@ def main() -> None:
         action="store_true",
         help="Show warnings for unreadable or non-media files",
     )
+    parser.add_argument(
+        "-p",
+        "--speed",
+        type=float,
+        default=1.0,
+        help="Playback speed multiplier to calculate adjusted duration (default: 1.0)",
+    )
 
     args = parser.parse_args()
+
+    if args.speed <= 0:
+        parser.error("Playback speed must be greater than 0.")
 
     input_paths = [Path(p).expanduser() for p in args.paths]
 
@@ -445,7 +455,7 @@ def main() -> None:
         p, target = item
         dur = probe_duration(ffprobe_bin, p, verbose=args.verbose)
         if dur is not None and dur > 0:
-            return MediaFile(path=p, duration=dur, target=target)
+            return MediaFile(path=p, duration=dur / args.speed, target=target)
         if p.is_file() and p in input_paths and args.verbose:
             sys.stderr.write(
                 f"Warning: '{p}' is not a valid media file or has no duration.\n"
