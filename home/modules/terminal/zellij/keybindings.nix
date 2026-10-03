@@ -100,8 +100,8 @@ _:
             bind "e" { EditScrollback; SwitchToMode "locked"; }
             bind "f" { SwitchToMode "entersearch"; SearchInput 0; }
             bind "Alt h" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
-            bind "Alt j" { MoveFocus "down"; SwitchToMode "locked"; }
-            bind "Alt k" { MoveFocus "up"; SwitchToMode "locked"; }
+            bind "Alt Shift j" { MoveFocus "down"; SwitchToMode "locked"; }
+            bind "Alt Shift k" { MoveFocus "up"; SwitchToMode "locked"; }
             bind "Alt l" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
             bind "s" { SwitchToMode "normal"; }
         }
@@ -174,8 +174,8 @@ _:
             bind "Alt Shift f" { ToggleFloatingPanes; }
             bind "Alt h" { MoveFocusOrTab "left"; }
             bind "Alt i" { MoveTab "left"; }
-            bind "Alt j" { MoveFocus "down"; }
-            bind "Alt k" { MoveFocus "up"; }
+            bind "Alt Shift j" { MoveFocus "down"; }
+            bind "Alt Shift k" { MoveFocus "up"; }
             bind "Alt l" { MoveFocusOrTab "right"; }
             bind "Alt n" { NewPane; }
             bind "Alt o" { MoveTab "right"; }
