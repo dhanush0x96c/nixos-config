@@ -244,6 +244,32 @@ _:
         renamepane {
             bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
         }
+        tmux {
+            bind "[" { SwitchToMode "scroll"; }
+            bind "Ctrl Space" { SwitchToMode "locked"; }
+            bind "\"" { NewPane "down"; SwitchToMode "locked"; }
+            bind "%" { NewPane "right"; SwitchToMode "locked"; }
+            bind "z" { ToggleFocusFullscreen; SwitchToMode "locked"; }
+            bind "c" { NewTab; SwitchToMode "locked"; }
+            bind "," { SwitchToMode "renametab"; }
+            bind "p" { GoToPreviousTab; SwitchToMode "locked"; }
+            bind "n" { GoToNextTab; SwitchToMode "locked"; }
+            bind "left" { MoveFocus "left"; SwitchToMode "locked"; }
+            bind "right" { MoveFocus "right"; SwitchToMode "locked"; }
+            bind "down" { MoveFocus "down"; SwitchToMode "locked"; }
+            bind "up" { MoveFocus "up"; SwitchToMode "locked"; }
+            bind "h" { MoveFocus "left"; SwitchToMode "locked"; }
+            bind "l" { MoveFocus "right"; SwitchToMode "locked"; }
+            bind "j" { MoveFocus "down"; SwitchToMode "locked"; }
+            bind "k" { MoveFocus "up"; SwitchToMode "locked"; }
+            bind "o" { FocusNextPane; }
+            bind "d" { Detach; }
+            bind "Space" { NextSwapLayout; }
+            bind "x" { CloseFocus; SwitchToMode "locked"; }
+        }
+        shared_except "tmux" "scroll" "search" {
+            bind "Ctrl Space" { SwitchToMode "tmux"; }
+        }
     }
   '';
 }
