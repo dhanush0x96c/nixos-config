@@ -5,7 +5,7 @@ _:
     enable = true;
 
     settings = {
-      lang = "python3";
+      lang = "rust";
       injector = {
         golang = {
           before = builtins.readFile ./leetcode/golang.go;
@@ -55,6 +55,12 @@ _:
       key = "<leader>li";
       action = "<cmd>Leet info<cr>";
       options.desc = "Problem Info";
+    }
+    {
+      mode = "n";
+      key = "<leader>la";
+      action = "<cmd>Leet lang<cr>";
+      options.desc = "Change Language";
     }
     {
       mode = "n";
