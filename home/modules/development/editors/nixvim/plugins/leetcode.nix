@@ -6,6 +6,19 @@ _:
 
     settings = {
       lang = "python3";
+      injector = {
+        golang = {
+          before = builtins.readFile ./leetcode/golang.go;
+          after = "func main() {}";
+        };
+        python3 = {
+          before = builtins.readFile ./leetcode/python3.py;
+        };
+        rust = {
+          before = builtins.readFile ./leetcode/rust.rs;
+          after = "fn main() {}";
+        };
+      };
       plugins = {
         non_standalone = true;
       };
