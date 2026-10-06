@@ -1,41 +1,18 @@
-{ pkgs, ... }:
+_:
 
 {
-  extraPackages = with pkgs; [
-    pyright
-    ruff
-  ];
-
   plugins = {
     lsp.servers = {
       pyright.enable = true;
-
-      ruff = {
-        enable = true;
-        extraOptions.init_options.settings = {
-          logLevel = "error";
-        };
-        onAttach.function = ''
-          if client.name == "ruff" then
-            client.server_capabilities.hoverProvider = false
-          end
-        '';
-      };
+      ruff.enable = true;
     };
 
-    conform-nvim.settings.formatters_by_ft.python = [
-      "ruff_fix"
-      "ruff_format"
-      "ruff_organize_imports"
-    ];
-
-    venv-selector = {
-      enable = true;
-      settings = {
-        options = {
-          notify_user_on_venv_activation = true;
-        };
-      };
+    conform-nvim.settings.formatters_by_ft = {
+      python = [
+        "ruff_fix"
+        "ruff_format"
+        "ruff_organize_imports"
+      ];
     };
 
     mini.modules.icons = {
@@ -46,6 +23,8 @@
         };
       };
     };
+
+    venv-selector.enable = true;
   };
 
   keymaps = [
