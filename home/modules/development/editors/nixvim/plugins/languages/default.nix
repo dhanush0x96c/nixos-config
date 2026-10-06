@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./go.nix
+    ./golang.nix
     ./markdown.nix
     ./nix.nix
     ./python.nix
