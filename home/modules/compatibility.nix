@@ -1,5 +1,5 @@
 _:
 
 {
-  home.pointerCursor.enable = true;
+  stylix.targets.rofi.enable = false;
 }
