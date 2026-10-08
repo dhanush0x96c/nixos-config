@@ -32,4 +32,18 @@
       css = [ "stylelint" ];
     };
   };
+
+  globals.project_run_commands.web = [
+    {
+      files = [
+        "bun.lock"
+        "package.json"
+      ];
+      cmd = "bun run dev";
+    }
+    {
+      files = [ "package.json" ];
+      cmd = "npm run dev";
+    }
+  ];
 }

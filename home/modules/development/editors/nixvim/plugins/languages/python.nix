@@ -35,4 +35,22 @@ _:
       options.desc = "Select VirtualEnv";
     }
   ];
+
+  globals.project_run_commands.python = [
+    {
+      files = [
+        "uv.lock"
+        "pyproject.toml"
+        "main.py"
+      ];
+      cmd = "uv run python main.py";
+    }
+    {
+      files = [
+        "pyproject.toml"
+        "main.py"
+      ];
+      cmd = "python main.py";
+    }
+  ];
 }

@@ -38,4 +38,11 @@
       };
     };
   };
+
+  globals.project_run_commands.golang = [
+    {
+      files = [ "go.mod" ];
+      cmd = "go run .";
+    }
+  ];
 }

@@ -33,4 +33,11 @@
       "rustfmt"
     ];
   };
+
+  globals.project_run_commands.rust = [
+    {
+      files = [ "Cargo.toml" ];
+      cmd = "cargo run -q";
+    }
+  ];
 }
