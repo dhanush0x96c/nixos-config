@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./auto-save.nix
     ./blink-cmp.nix
     ./bufferline.nix
     ./conform.nix
