@@ -34,10 +34,11 @@
     ];
   };
 
-  globals.project_run_commands.rust = [
+  globals.project_commands.rust = [
     {
       files = [ "Cargo.toml" ];
-      cmd = "cargo run -q";
+      run = "cargo run -q";
+      test = "cargo test -q";
     }
   ];
 }

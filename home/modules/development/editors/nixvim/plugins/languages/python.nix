@@ -36,21 +36,21 @@ _:
     }
   ];
 
-  globals.project_run_commands.python = [
+  globals.project_commands.python = [
     {
       files = [
         "uv.lock"
         "pyproject.toml"
         "main.py"
       ];
-      cmd = "uv run python main.py";
+      run = "uv run python main.py";
     }
     {
       files = [
         "pyproject.toml"
         "main.py"
       ];
-      cmd = "python main.py";
+      run = "python main.py";
     }
   ];
 }

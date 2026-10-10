@@ -33,17 +33,17 @@
     };
   };
 
-  globals.project_run_commands.web = [
+  globals.project_commands.web = [
     {
       files = [
         "bun.lock"
         "package.json"
       ];
-      cmd = "bun run dev";
+      run = "bun run dev";
     }
     {
       files = [ "package.json" ];
-      cmd = "npm run dev";
+      run = "npm run dev";
     }
   ];
 }
