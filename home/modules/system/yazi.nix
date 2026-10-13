@@ -1,11 +1,6 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    glow
-    ouch
-  ];
-
   programs.yazi = {
     enable = true;
     plugins = {
@@ -49,7 +44,7 @@
       opener = {
         edit = [
           {
-            run = "nvim %s";
+            run = "${pkgs.neovim}/bin/nvim %s";
             block = true;
             desc = "Edit with Neovim";
             for = "unix";
@@ -57,14 +52,14 @@
         ];
         extract = [
           {
-            run = "ouch d -y %s";
+            run = "${pkgs.ouch}/bin/ouch d -y %s";
             desc = "Extract here with ouch";
             for = "unix";
           }
         ];
         image = [
           {
-            run = "imv %s";
+            run = "${pkgs.imv}/bin/imv %s";
             orphan = true;
             desc = "View with imv";
             for = "unix";
@@ -72,7 +67,7 @@
         ];
         play = [
           {
-            run = "mpv %s";
+            run = "${pkgs.mpv}/bin/mpv %s";
             orphan = true;
             desc = "Play with mpv";
             for = "unix";
@@ -83,7 +78,7 @@
         prepend_previewers = [
           {
             url = "*.md";
-            run = "piper -- glow -s dark \"$1\"";
+            run = "piper -- ${pkgs.glow}/bin/glow -s dark \"$1\"";
           }
           {
             mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}";
