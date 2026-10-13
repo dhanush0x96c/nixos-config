@@ -120,6 +120,7 @@ Repositories cloned for documentation and option discovery must be listed here t
 | `golangci/golangci-lint`     | `~/.cache/docs/golangci-lint` | Golangci-lint documentation and linters     |
 | `kawre/leetcode.nvim`        | `~/.cache/docs/leetcode.nvim` | Leetcode Neovim plugin documentation        |
 | `mgechev/revive`             | `~/.cache/docs/revive`        | Revive Go linter documentation and rules    |
+| `mpv-player/mpv`             | `~/.cache/docs/mpv`           | mpv documentation and source repository     |
 | `nix-community/home-manager` | `~/.cache/docs/home-manager`  | Home Manager options and module definitions |
 | `nix-community/nixvim`       | `~/.cache/docs/nixvim`        | Nixvim options and module definitions       |
 | `ogulcancelik/herdr`         | `~/.cache/docs/herdr`         | Herdr terminal multiplexer documentation    |
