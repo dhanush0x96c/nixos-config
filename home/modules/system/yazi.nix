@@ -47,6 +47,15 @@
             ];
           }
           {
+            mime = "folder/*";
+            use = [
+              "edit"
+              "open"
+              "play"
+              "reveal"
+            ];
+          }
+          {
             mime = "image/*";
             use = [
               "image"
