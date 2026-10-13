@@ -14,11 +14,67 @@
       ouch = pkgs.yaziPlugins.ouch;
     };
     settings = {
+      open = {
+        prepend_rules = [
+          {
+            mime = "audio/*";
+            use = [
+              "play"
+              "reveal"
+            ];
+          }
+          {
+            mime = "image/*";
+            use = [
+              "image"
+              "reveal"
+            ];
+          }
+          {
+            mime = "text/*";
+            use = [
+              "edit"
+              "reveal"
+            ];
+          }
+          {
+            mime = "video/*";
+            use = [
+              "play"
+              "reveal"
+            ];
+          }
+        ];
+      };
       opener = {
+        edit = [
+          {
+            run = "nvim %s";
+            block = true;
+            desc = "Edit with Neovim";
+            for = "unix";
+          }
+        ];
         extract = [
           {
             run = "ouch d -y %s";
             desc = "Extract here with ouch";
+            for = "unix";
+          }
+        ];
+        image = [
+          {
+            run = "imv %s";
+            orphan = true;
+            desc = "View with imv";
+            for = "unix";
+          }
+        ];
+        play = [
+          {
+            run = "mpv %s";
+            orphan = true;
+            desc = "Play with mpv";
             for = "unix";
           }
         ];
