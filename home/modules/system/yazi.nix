@@ -33,6 +33,13 @@
       open = {
         prepend_rules = [
           {
+            mime = "application/pdf";
+            use = [
+              "pdf"
+              "reveal"
+            ];
+          }
+          {
             mime = "audio/*";
             use = [
               "play"
@@ -83,6 +90,14 @@
             run = "${pkgs.imv}/bin/imv %s";
             orphan = true;
             desc = "View with imv";
+            for = "unix";
+          }
+        ];
+        pdf = [
+          {
+            run = "${pkgs.papers}/bin/papers %s";
+            orphan = true;
+            desc = "View with Papers";
             for = "unix";
           }
         ];
