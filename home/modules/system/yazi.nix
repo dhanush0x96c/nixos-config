@@ -1,6 +1,27 @@
 { pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    _7zz
+    chafa
+    exiftool
+    fd
+    ffmpeg
+    file
+    fzf
+    imagemagick
+    jq
+    mediainfo
+    ouch
+    poppler-utils
+    resvg
+    ripgrep
+    ueberzugpp
+    wl-clipboard
+    xclip
+    zoxide
+  ];
+
   programs.yazi = {
     enable = true;
     plugins = {

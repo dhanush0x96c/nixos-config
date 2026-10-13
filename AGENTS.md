@@ -110,21 +110,22 @@ This workflow applies when discovering configuration options or reading document
 
 Repositories cloned for documentation and option discovery must be listed here to avoid duplicate clones across agent sessions:
 
-| Repository                   | Stable Path                   | Purpose                                     |
-| ---------------------------- | ----------------------------- | ------------------------------------------- |
-| `Alexays/Waybar`             | `~/.cache/docs/Waybar`        | Waybar documentation and source repository  |
-| `LazyVim/LazyVim`            | `~/.cache/docs/LazyVim`       | LazyVim extra plugins and defaults          |
-| `danth/stylix`               | `~/.cache/docs/stylix`        | Stylix theme options and module definitions |
-| `exec64/imv`                 | `~/.cache/docs/imv`           | imv documentation and source repository     |
-| `folke/snacks.nvim`          | `~/.cache/docs/snacks.nvim`   | Snacks.nvim plugin documentation and source |
-| `golangci/golangci-lint`     | `~/.cache/docs/golangci-lint` | Golangci-lint documentation and linters     |
-| `kawre/leetcode.nvim`        | `~/.cache/docs/leetcode.nvim` | Leetcode Neovim plugin documentation        |
-| `mgechev/revive`             | `~/.cache/docs/revive`        | Revive Go linter documentation and rules    |
-| `mpv-player/mpv`             | `~/.cache/docs/mpv`           | mpv documentation and source repository     |
-| `nix-community/home-manager` | `~/.cache/docs/home-manager`  | Home Manager options and module definitions |
-| `nix-community/nixvim`       | `~/.cache/docs/nixvim`        | Nixvim options and module definitions       |
-| `ogulcancelik/herdr`         | `~/.cache/docs/herdr`         | Herdr terminal multiplexer documentation    |
-| `sxyazi/yazi`                | `~/.cache/docs/yazi`          | Yazi documentation and source repository    |
+| Repository                   | Stable Path                       | Purpose                                     |
+| ---------------------------- | --------------------------------- | ------------------------------------------- |
+| `Alexays/Waybar`             | `~/.cache/docs/Waybar`            | Waybar documentation and source repository  |
+| `LazyVim/LazyVim`            | `~/.cache/docs/LazyVim`           | LazyVim extra plugins and defaults          |
+| `danth/stylix`               | `~/.cache/docs/stylix`            | Stylix theme options and module definitions |
+| `exec64/imv`                 | `~/.cache/docs/imv`               | imv documentation and source repository     |
+| `folke/snacks.nvim`          | `~/.cache/docs/snacks.nvim`       | Snacks.nvim plugin documentation and source |
+| `golangci/golangci-lint`     | `~/.cache/docs/golangci-lint`     | Golangci-lint documentation and linters     |
+| `kawre/leetcode.nvim`        | `~/.cache/docs/leetcode.nvim`     | Leetcode Neovim plugin documentation        |
+| `mgechev/revive`             | `~/.cache/docs/revive`            | Revive Go linter documentation and rules    |
+| `mpv-player/mpv`             | `~/.cache/docs/mpv`               | mpv documentation and source repository     |
+| `nix-community/home-manager` | `~/.cache/docs/home-manager`      | Home Manager options and module definitions |
+| `nix-community/nixvim`       | `~/.cache/docs/nixvim`            | Nixvim options and module definitions       |
+| `ogulcancelik/herdr`         | `~/.cache/docs/herdr`             | Herdr terminal multiplexer documentation    |
+| `sxyazi/yazi`                | `~/.cache/docs/yazi`              | Yazi documentation and source repository    |
+| `yazi-rs/yazi-rs.github.io`  | `~/.cache/docs/yazi-rs.github.io` | Yazi documentation website repository       |
 
 ---
 
