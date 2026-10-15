@@ -81,9 +81,9 @@
       opener = {
         edit = [
           {
-            run = "${pkgs.neovim}/bin/nvim %s";
+            run = "$EDITOR %s";
             block = true;
-            desc = "Edit with Neovim";
+            desc = "Edit with $EDITOR";
             for = "unix";
           }
         ];
