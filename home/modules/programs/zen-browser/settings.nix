@@ -7,6 +7,16 @@ _:
     "zen.tab-bar.expanded" = false;
     "zen.tabs.vertical.expand-on-hover" = true;
 
+    # Firefox AI Chat
+    "browser.ml.enable" = true;
+    "browser.ml.chat.enabled" = true;
+    "browser.ml.chat.provider" = "https://chatgpt.com";
+    "browser.ml.chat.sidebar" = true;
+    "browser.ml.chat.shortcuts" = true;
+    "browser.ml.chat.shortcuts.custom" = true;
+    "browser.ml.chat.menu" = true;
+    "browser.ml.chat.page" = true;
+
     # Extension Updates & Notifications
     "extensions.update.enabled" = false;
     "extensions.update.autoUpdateDefault" = false;
