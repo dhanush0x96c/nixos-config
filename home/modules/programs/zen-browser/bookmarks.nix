@@ -102,7 +102,7 @@ _:
       {
         keyword = "seedr";
         name = "Seedr";
-        url = "https://www.seedr.cc/files";
+        url = "https://www.seedr.cc/app";
       }
       {
         keyword = "nix";
