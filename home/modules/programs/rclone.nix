@@ -20,7 +20,7 @@
         mounts = {
           "" = {
             enable = true;
-            mountPoint = "${config.home.homeDirectory}/gdrive";
+            mountPoint = config.my.paths.gdrive;
           };
         };
       };
@@ -37,8 +37,8 @@
     Service = {
       Type = "oneshot";
       ExecStart = "${pkgs.writeShellScript "rclone-sync-gdrive" ''
-        PASSWORDS_FILE="${config.home.homeDirectory}/Passwords/Passwords.kdbx"
-        NOTES_DIR="${config.home.homeDirectory}/Notes"
+        PASSWORDS_FILE="${config.my.paths.passwords}"
+        NOTES_DIR="${config.my.paths.notes}"
 
         if [ -f "$PASSWORDS_FILE" ]; then
           echo "Copying Passwords.kdbx to Google Drive..."

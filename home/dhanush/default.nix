@@ -3,6 +3,7 @@
 {
   imports = [
     ./home.nix
+    ../settings.nix
 
     ../modules/shells
     ../modules/cli

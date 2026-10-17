@@ -122,7 +122,7 @@
       plugin = {
         prepend_preloaders = [
           {
-            url = "${config.home.homeDirectory}/gdrive/**";
+            url = "${config.my.paths.gdrive}/**";
             run = "noop";
           }
         ];
