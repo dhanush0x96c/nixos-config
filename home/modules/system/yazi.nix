@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -120,6 +120,12 @@
         ];
       };
       plugin = {
+        prepend_preloaders = [
+          {
+            url = "${config.home.homeDirectory}/gdrive/**";
+            run = "noop";
+          }
+        ];
         prepend_previewers = [
           {
             url = "*.md";
