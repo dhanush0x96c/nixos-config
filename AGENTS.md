@@ -148,9 +148,9 @@ Repositories cloned for documentation and option discovery must be listed here t
    - Keep existing `stateVersion` settings (`26.05`) intact (both in [hosts/tesseract/configuration.nix](hosts/tesseract/configuration.nix) and [home/dhanush/home.nix](home/dhanush/home.nix)).
    - Maintain security/sudo rules in [hosts/tesseract/configuration.nix](hosts/tesseract/configuration.nix) or system security module [modules/security.nix](modules/security.nix).
 
-5. **VCS / Git Operations**:
-   - **Never use git**: Do not run any `git` command (including `git add`, `git commit`, `git status`, etc.) under any circumstances.
-   - **Allowed `jj` commands**: You are allowed to use `jj diff`, `jj log`, `jj describe`, `jj status`, and `jj new` / `jj commit` for version control operations.
+5. **Version Control**:
+   - Use version-control commands only when the user explicitly asks for version-control work.
+   - This is a `jj` repo, so use `jj` commands instead of `git` when requested.
 
 6. **Nixos Rebuild Operations**:
    - **Never use `nixos-rebuild`**: Do not run the `nixos-rebuild` command (including `nixos-rebuild switch` or `nixos-rebuild build`) under any circumstances. Testing, building, and applying the system configuration is the user's responsibility.
