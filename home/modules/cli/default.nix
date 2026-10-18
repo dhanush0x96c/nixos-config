@@ -18,6 +18,7 @@
   home.packages = with pkgs; [
     duf
     dust
+    ffmpeg
     fx
     just
     tldr

@@ -60,13 +60,13 @@ This repository manages the system and user configurations for the host **`tesse
     │   └── home.nix           # Core home manager settings (username, homeDirectory, stateVersion)
     └── modules/               # Modular user program, terminal, and shell configurations
         ├── cli/               # CLI utility configs (bat, carapace, direnv, eza, fd, fzf, gpg, jq, pass, ripgrep, zoxide)
-        │   └── default.nix    # Imports CLI configs and defines general packages (duf, dust, fx, just, tldr, unzip)
+        │   └── default.nix    # Imports CLI configs and defines general packages (duf, dust, ffmpeg, fx, just, tldr, unzip)
         ├── compatibility.nix  # Compatibility layers for applications
         ├── development/       # Development setups, compilers, and IDEs
         │   ├── agents/        # AI developer agents (antigravity-cli, claude-code, codex, copilot, opencode)
         │   ├── editors/       # Editor setups (nixvim, vscode, zed)
         │   ├── languages/     # Programming language toolchains (c, golang, python)
-        │   └── default.nix    # Imports dev tools and defines system dev tools (ffmpeg)
+        │   └── default.nix    # Imports dev tools (agents, editors, languages)
         ├── hyprland/          # User Hyprland configuration, widgets, lock, and idle
         │   ├── hypr/          # Hyprland custom script configuration (hyprland.lua)
         │   ├── waybar/        # Waybar bar configurations, style.css, and rebuild-status.sh
