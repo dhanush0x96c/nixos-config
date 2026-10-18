@@ -113,6 +113,7 @@ Repositories cloned for documentation and option discovery must be listed here t
 | ---------------------------- | --------------------------------- | ------------------------------------------- |
 | `Alexays/Waybar`             | `~/.cache/docs/Waybar`            | Waybar documentation and source repository  |
 | `LazyVim/LazyVim`            | `~/.cache/docs/LazyVim`           | LazyVim extra plugins and defaults          |
+| `dandavison/delta`           | `~/.cache/docs/delta`             | Delta documentation and source repository   |
 | `danth/stylix`               | `~/.cache/docs/stylix`            | Stylix theme options and module definitions |
 | `exec64/imv`                 | `~/.cache/docs/imv`               | imv documentation and source repository     |
 | `folke/snacks.nvim`          | `~/.cache/docs/snacks.nvim`       | Snacks.nvim plugin documentation and source |

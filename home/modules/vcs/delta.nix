@@ -15,8 +15,7 @@ in
       hyperlinks = true;
       features = "tokyonight-moon";
 
-      # TODO: Configure program to open
-      # hyperlinks-file-link-format = "";
+      hyperlinks-file-link-format = "vscode://file/{path}:{line}";
 
       tokyonight-moon = {
         blame-palette = "${c.base00} ${c.base01} #191a2a #2f334d ${c.base03}";

@@ -18,9 +18,19 @@ _:
         autocrlf = "input";
       };
 
-      merge.conflictstyle = "zdiff3";
+      diff.tool = "nvimdiff";
+      difftool.prompt = false;
 
-      # TODO: Configure difftool and mergetool
+      merge = {
+        conflictstyle = "zdiff3";
+        tool = "nvimdiff";
+      };
+
+      mergetool = {
+        prompt = false;
+        keepBackup = false;
+        nvimdiff.layout = "LOCAL,MERGED,REMOTE";
+      };
     };
   };
 }
