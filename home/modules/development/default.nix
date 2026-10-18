@@ -4,13 +4,10 @@
   imports = [
     ./agents
     ./editors
-    ./gcc.nix
-    ./go.nix
-    ./uv.nix
+    ./languages
   ];
 
   home.packages = with pkgs; [
     ffmpeg
-    python3
   ];
 }

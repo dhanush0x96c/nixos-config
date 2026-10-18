@@ -65,9 +65,8 @@ This repository manages the system and user configurations for the host **`tesse
         ├── development/       # Development setups, compilers, and IDEs
         │   ├── agents/        # AI developer agents (antigravity-cli, claude-code, codex, copilot, opencode)
         │   ├── editors/       # Editor setups (nixvim, vscode, zed)
-        │   ├── default.nix    # Imports dev tools and defines system programming language tools (ffmpeg, python)
-        │   ├── go.nix         # Go compiler / toolchain setup
-        │   └── uv.nix         # Python uv packager setup
+        │   ├── languages/     # Programming language toolchains (c, golang, python)
+        │   └── default.nix    # Imports dev tools and defines system dev tools (ffmpeg)
         ├── hyprland/          # User Hyprland configuration, widgets, lock, and idle
         │   ├── hypr/          # Hyprland custom script configuration (hyprland.lua)
         │   ├── waybar/        # Waybar bar configurations, style.css, and rebuild-status.sh
