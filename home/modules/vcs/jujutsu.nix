@@ -6,8 +6,17 @@
     settings = {
       user = {
         name = config.my.user.name;
-        email = config.my.user.githubEmail;
       };
+      "--scope" = [
+        {
+          "--when".repositories = [ config.my.paths.githubProjects ];
+          user.email = config.my.user.githubEmail;
+        }
+        {
+          "--when".repositories = [ config.my.paths.gitlabProjects ];
+          user.email = config.my.user.gitlabEmail;
+        }
+      ];
       ui = {
         default-command = "log";
         pager = "delta";

@@ -8,7 +8,6 @@
     settings = {
       user = {
         name = config.my.user.name;
-        email = config.my.user.githubEmail;
       };
 
       init.defaultBranch = "main";
@@ -32,5 +31,24 @@
         nvimdiff.layout = "LOCAL,MERGED,REMOTE";
       };
     };
+
+    includes = [
+      {
+        condition = "gitdir:${config.my.paths.githubProjects}/";
+        contents = {
+          user = {
+            email = config.my.user.githubEmail;
+          };
+        };
+      }
+      {
+        condition = "gitdir:${config.my.paths.gitlabProjects}/";
+        contents = {
+          user = {
+            email = config.my.user.gitlabEmail;
+          };
+        };
+      }
+    ];
   };
 }

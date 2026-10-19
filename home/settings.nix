@@ -60,6 +60,16 @@
         default = "${config.home.homeDirectory}/gdrive";
         description = "Local mount path for Google Drive via rclone.";
       };
+      githubProjects = lib.mkOption {
+        type = lib.types.str;
+        default = "${config.home.homeDirectory}/Projects/github";
+        description = "Local path to GitHub projects directory.";
+      };
+      gitlabProjects = lib.mkOption {
+        type = lib.types.str;
+        default = "${config.home.homeDirectory}/Projects/gitlab";
+        description = "Local path to GitLab projects directory.";
+      };
       notes = lib.mkOption {
         type = lib.types.str;
         default = "${config.home.homeDirectory}/Notes";

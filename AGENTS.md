@@ -119,6 +119,7 @@ Repositories cloned for documentation and option discovery must be listed here t
 | `folke/snacks.nvim`          | `~/.cache/docs/snacks.nvim`       | Snacks.nvim plugin documentation and source |
 | `golangci/golangci-lint`     | `~/.cache/docs/golangci-lint`     | Golangci-lint documentation and linters     |
 | `kawre/leetcode.nvim`        | `~/.cache/docs/leetcode.nvim`     | Leetcode Neovim plugin documentation        |
+| `martinvonz/jj`              | `~/.cache/docs/jj`                | Jujutsu documentation and source repository |
 | `mgechev/revive`             | `~/.cache/docs/revive`            | Revive Go linter documentation and rules    |
 | `mpv-player/mpv`             | `~/.cache/docs/mpv`               | mpv documentation and source repository     |
 | `nix-community/home-manager` | `~/.cache/docs/home-manager`      | Home Manager options and module definitions |
