@@ -2,6 +2,24 @@
 
 {
   options.my = {
+    user = {
+      name = lib.mkOption {
+        type = lib.types.str;
+        default = "Dhanush Shetty";
+        description = "Full name of the user.";
+      };
+      githubEmail = lib.mkOption {
+        type = lib.types.str;
+        default = "154754292+dhanush0x96c@users.noreply.github.com";
+        description = "GitHub private email address.";
+      };
+      gitlabEmail = lib.mkOption {
+        type = lib.types.str;
+        default = "25153585-dhanush0x96c@users.noreply.gitlab.com";
+        description = "GitLab private email address.";
+      };
+    };
+
     terminal = {
       name = lib.mkOption {
         type = lib.types.str;

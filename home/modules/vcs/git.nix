@@ -1,4 +1,4 @@
-_:
+{ config, ... }:
 
 {
 
@@ -7,8 +7,8 @@ _:
 
     settings = {
       user = {
-        name = "Dhanush Shetty";
-        email = "154754292+dhanush0x96c@users.noreply.github.com";
+        name = config.my.user.name;
+        email = config.my.user.githubEmail;
       };
 
       init.defaultBranch = "main";

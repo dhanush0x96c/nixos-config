@@ -5,8 +5,8 @@
     enable = true;
     settings = {
       user = {
-        name = config.programs.git.settings.user.name;
-        email = config.programs.git.settings.user.email;
+        name = config.my.user.name;
+        email = config.my.user.githubEmail;
       };
       ui = {
         default-command = "log";
