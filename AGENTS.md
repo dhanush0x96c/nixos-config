@@ -81,7 +81,7 @@ This repository manages the system and user configurations for the host **`tesse
         │   ├── bluetooth/     # Bluetooth helper and connect script (bluetooth-connect-last.sh)
         │   └── rebuild/       # NixOS rebuild status script/helper (rebuild.sh)
         ├── terminal/          # Terminal emulators (kitty, tmux)
-        └── vcs/               # Version control systems (git, jujutsu, jjui, lazygit, gh, delta)
+        └── vcs/               # Version control systems (git, jujutsu, jjui, lazygit, gh, delta, set-vcs)
 ```
 
 ---
