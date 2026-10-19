@@ -23,9 +23,10 @@
       keepassxc-browser
       languagetool
       proton-vpn
-      video-downloadhelper
-      tampermonkey
       react-devtools
+      sponsorblock
+      tampermonkey
+      video-downloadhelper
     ];
   };
 }
