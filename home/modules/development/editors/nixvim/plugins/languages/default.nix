@@ -37,6 +37,7 @@ let
 in
 {
   imports = [
+    ./c.nix
     ./golang.nix
     ./markdown.nix
     ./nix.nix
