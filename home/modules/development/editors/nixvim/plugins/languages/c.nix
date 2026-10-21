@@ -34,7 +34,7 @@
   globals.project_commands.c = [
     {
       files = [ "CMakeLists.txt" ];
-      run = "cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON && cmake --build build && ./build/main";
+      run = "cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON && cmake --build build && ./build/$(grep -m1 'add_executable' CMakeLists.txt | sed 's/add_executable([[:space:]]*//' | awk '{print $1}' | tr -d ')')";
     }
     {
       files = [ "Makefile" ];
