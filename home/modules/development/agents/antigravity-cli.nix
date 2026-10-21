@@ -7,8 +7,9 @@
 
     settings = {
       colorScheme = "tokyo night";
-      model = "Gemini 3.1 Pro (High)";
+      model = "Claude Sonnet 4.6 (Thinking)";
       notifications = true;
+      verbosity = "high";
     };
 
     permissions = {
