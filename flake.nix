@@ -12,10 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    waybar = {
-      url = "github:Alexays/Waybar/323e66f51644d0562be54af3c21f368a4d61d321";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    waybar.url = "github:Alexays/Waybar/c15ec02ede4343592a59eb5c2ff4443c9c045f7c";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
