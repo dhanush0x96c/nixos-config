@@ -81,7 +81,7 @@ This repository manages the system and user configurations for the host **`tesse
         │   ├── bluetooth/     # Bluetooth helper and connect script (bluetooth-connect-last.sh)
         │   └── rebuild/       # NixOS rebuild status script/helper (rebuild.sh)
         ├── terminal/          # Terminal emulators (kitty, tmux)
-        └── vcs/               # Version control systems (git, jujutsu, jjui, lazygit, gh, delta, set-vcs)
+        └── vcs/               # Version control systems (git, jujutsu, jjui, lazygit, gh, glab, delta, set-vcs)
 ```
 
 ---
@@ -116,6 +116,7 @@ Repositories cloned for documentation and option discovery must be listed here t
 | `dandavison/delta`           | `~/.cache/docs/delta`             | Delta documentation and source repository   |
 | `danth/stylix`               | `~/.cache/docs/stylix`            | Stylix theme options and module definitions |
 | `exec64/imv`                 | `~/.cache/docs/imv`               | imv documentation and source repository     |
+| `gitlab-org/cli`             | `~/.cache/docs/glab`              | GitLab CLI documentation and source repo    |
 | `folke/snacks.nvim`          | `~/.cache/docs/snacks.nvim`       | Snacks.nvim plugin documentation and source |
 | `golangci/golangci-lint`     | `~/.cache/docs/golangci-lint`     | Golangci-lint documentation and linters     |
 | `kawre/leetcode.nvim`        | `~/.cache/docs/leetcode.nvim`     | Leetcode Neovim plugin documentation        |
