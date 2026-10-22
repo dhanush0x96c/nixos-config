@@ -44,6 +44,7 @@ This repository manages the system and user configurations for the host **`tesse
 │   ├── boot.nix               # System boot loader & kernel parameters
 │   ├── compatibility.nix      # System compatibility configuration
 │   ├── fuse.nix               # FUSE configuration
+│   ├── gnome-keyring.nix      # GNOME Keyring daemon, PAM integration, and Seahorse
 │   ├── hyprland.nix           # Hyprland system enabling config
 │   ├── keyboard.nix           # Console keyboard configuration
 │   ├── locale.nix             # System locale & timezone configuration
@@ -125,6 +126,7 @@ Repositories cloned for documentation and option discovery must be listed here t
 | `mpv-player/mpv`             | `~/.cache/docs/mpv`               | mpv documentation and source repository     |
 | `nix-community/home-manager` | `~/.cache/docs/home-manager`      | Home Manager options and module definitions |
 | `nix-community/nixvim`       | `~/.cache/docs/nixvim`            | Nixvim options and module definitions       |
+| `NixOS/nixpkgs`              | `~/.cache/docs/nixpkgs`           | NixOS options, packages, and modules repo   |
 | `ogulcancelik/herdr`         | `~/.cache/docs/herdr`             | Herdr terminal multiplexer documentation    |
 | `rycee/nur-expressions`      | `~/.cache/docs/nur-expressions`   | NUR Firefox addons and repository source    |
 | `sxyazi/yazi`                | `~/.cache/docs/yazi`              | Yazi documentation and source repository    |

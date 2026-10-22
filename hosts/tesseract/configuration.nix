@@ -6,6 +6,7 @@
     ../../modules/boot.nix
     ../../modules/compatibility.nix
     ../../modules/fuse.nix
+    ../../modules/gnome-keyring.nix
     ../../modules/hyprland.nix
     ../../modules/kanata
     ../../modules/keyboard.nix
